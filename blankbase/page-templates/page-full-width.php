@@ -1,3 +1,10 @@
+<?php
+
+/** 
+ * Template Name: Full Width
+ */
+
+?>
 <?php get_header(); ?>
 
 		<?php if (blankbase_the_breadcrumbs()) : ?>
@@ -7,28 +14,27 @@
 		<main role="main">
 		<?php
 		
-		if ( have_posts() ) :
+		if ( have_posts() ) {
 		
 			/** the loop */
 			while ( have_posts() ) : the_post();
+			
+				get_template_part( 'partials/content/content', 'page'  );
 				
-				get_template_part( 'partials/content/content', get_post_format() );
+				if ( comments_open() || get_comments_number() )
+					comments_template();
 				
 			endwhile;
 			
-			blankbase_paging_nav();
-			
-		else:
+		} else {
 			
 			get_template_part( 'partials/content/content', 'none' );
 			
-		endif;
+		}
 		
 		?>
 		</main>
 
 		<?php get_template_part( 'partials/sidebar/sidebar-content' ); // get_sidebar( 'content' ); ?>
-		
-		<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

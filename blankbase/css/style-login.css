@@ -1,0 +1,97 @@
+body.login {
+}
+
+body.login div#login {
+}
+
+body.login div#login h1 {
+}
+
+body.login div#login h1 a {
+	background-image: url('../../../../wp-admin/images/wordpress-logo.svg?ver=20131107');
+	padding-bottom: 30px;
+}
+
+body.login div#login form#loginform {
+}
+
+body.login div#login form#loginform p {
+}
+
+body.login div#login form#loginform p label {
+}
+
+body.login div#login form#loginform input {
+}
+
+body.login div#login form#loginform input#user_login {
+}
+
+body.login div#login form#loginform input#user_login:focus {
+	border-color: #5b9dd9;
+	box-shadow: 0 0 2px rgba(30, 140, 190, 0.8);
+}
+
+body.login div#login form#loginform input#user_pass {
+}
+
+body.login div#login form#loginform input#user_pass:focus {
+	border-color: #5b9dd9;
+	box-shadow: 0 0 2px rgba(30, 140, 190, 0.8);
+}
+
+body.login div#login form#loginform p.forgetmenot {
+}
+
+body.login div#login form#loginform p.forgetmenot input#rememberme {
+}
+
+body.login div#login form#loginform p.forgetmenot input#rememberme:hover {
+	appearance: none;
+	background-color: red;
+}
+
+body.login div#login form#loginform p.submit {
+}
+
+body.login div#login form#loginform p.submit input#wp-submit {
+	background: #00a0d2 none repeat scroll 0 0;
+	border-color: #0073aa;
+	box-shadow: 0 1px 0 rgba(120, 200, 230, 0.5) inset, 0 1px 0 rgba(0, 0, 0, 0.15);
+
+	color: #fff;
+	text-decoration: none;
+}
+
+body.login div#login p#nav {
+}
+
+body.login div#login p#nav a {
+	color: #999;
+	text-decoration: none;
+}
+
+body.login div#login p#nav a:hover {
+	color: #00a0d2;
+}
+
+body.login div#login p#backtoblog {
+}
+
+body.login div#login p#backtoblog a {
+	color: #999;
+	text-decoration: none;
+}
+
+body.login div#login p#backtoblog a:hover {
+	color: #00a0d2;
+}
+
+body.login div#login div#login_error a {
+	color: #0073aa;
+	outline: 0 none;
+}
+
+body.login div#login div#login_error a:hover {
+	color: #00a0d2;
+}

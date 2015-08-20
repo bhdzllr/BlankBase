@@ -1,0 +1,12 @@
+/**
+ * Editor Style Document for "Blank Base Child"
+ */
+ 
+html, body {
+	color: #222222;
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	text-rendering: optimizeLegibility;
+	vertical-align: baseline;
+}

@@ -7,22 +7,25 @@
 		<main role="main">
 		<?php
 		
-		if ( have_posts() ) :
+		if ( have_posts() ) {
 		
 			/** the loop */
 			while ( have_posts() ) : the_post();
-				
+			
 				get_template_part( 'partials/content/content', get_post_format() );
 				
 			endwhile;
 			
-			blankbase_paging_nav();
+			blankbase_post_nav();
 			
-		else:
+			if ( comments_open() || get_comments_number() ) 
+				comments_template();
+			
+		} else {
 			
 			get_template_part( 'partials/content/content', 'none' );
 			
-		endif;
+		}
 		
 		?>
 		</main>
