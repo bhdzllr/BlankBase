@@ -6,6 +6,8 @@
  * @return string Breadcrumbs
  */
 function blankbase_the_breadcrumbs() {
+	global $post;
+
 	if ( is_front_page() )
 		return;
 
