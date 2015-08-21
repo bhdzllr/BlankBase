@@ -56,3 +56,52 @@ function blankbase_the_parent_children( $post, $start = null, $end = null ) {
 		echo $start . $children . $end;
 	}
 }
+
+/**
+ * Modify comment markup
+ *
+ * @param object  $comment POPO with comment data
+ * @param array   $args    Array with arguments
+ * @param integer $depth   Depth of comment replies
+ */
+function blankbase_comment_markup( $comment, $args, $depth ) {
+	$tag = ( 'div' === $args['style'] ) ? 'div' : 'li';
+
+	?>
+	<<?php echo $tag; ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ); ?>>
+	<article id="comment-<?php comment_ID(); ?>" <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ); ?>>
+		<footer>
+			<div>
+				<?php if ( 0 != $args['avatar_size'] ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
+				<?php printf( __( '%s <span class="says">says:</span>' ), sprintf( '<b class="fn">%s</b>', get_comment_author_link() ) ); ?>
+			</div>
+
+			<div>
+				<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID, $args ) ); ?>">
+					<time datetime="<?php comment_time( 'c' ); ?>">
+						<?php printf( _x( '%1$s at %2$s', '1: date, 2: time' ), get_comment_date(), get_comment_time() ); ?>
+					</time>
+				</a>
+
+				<?php edit_comment_link( __( 'Edit', 'blankbase' ) ); ?>
+			</div>
+
+			<?php if ( '0' == $comment->comment_approved ) : ?>
+				<p><?php _e( 'Your comment is awaiting moderation.' ); ?></p>
+			<?php endif; ?>
+		</footer>
+
+		<div>
+			<?php comment_text(); ?>
+		</div>
+
+		<div>
+			<?php comment_reply_link( array_merge( $args, array(
+				'add_below' => 'comment',
+				'depth'     => $depth,
+				'max_depth' => $args['max_depth']
+			) ) ); ?>
+		</div>
+	</article>
+	<?php   
+}

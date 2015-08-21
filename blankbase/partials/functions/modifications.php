@@ -10,6 +10,43 @@ function blankbase_new_excerpt_length() {
 }
 
 /**
+ * Modify comment form
+ */
+function blankbase_comment_form() {
+	global $allowedtags;
+
+	$allowedtags = array(
+		'a' => array(
+			'href'  => array(),
+			'title' => array()
+		),
+		// 'abbr' => array(
+		// 	'title' => array()
+		// ),
+		// 'acronym' => array(
+		// 	'title' => array()
+		// ),
+		// 'b' => array(),
+		'blockquote' => array(
+			'cite'  => array(),
+		),
+		'cite' => array(),
+		'code' => array(),
+		'del' => array(
+			'datetime' => array()
+		),
+		// 'em' => array(),
+		// 'i' => array(),
+		'q' => array(
+			'cite' => array()
+		),
+		's' => array(),
+		'strike' => array(),
+		// 'strong' => array()
+	);
+}
+
+/**
  * Add custom style to login form
  */
 function blankbase_custom_login() {
@@ -112,14 +149,15 @@ function blankbase_remove_category_list_rel( $output ) {
 /**
  * Initialize all functions
  */
-add_filter( 'excerpt_length',        'blankbase_new_excerpt_length');
-add_action( 'login_enqueue_scripts', 'blankbase_custom_login' );
-add_filter( 'login_headerurl',       'blankbase_custom_login_logo_url' );
-add_filter( 'login_headertitle',     'blankbase_custom_login_logo_url_title' );
-add_action( 'admin_head',            'blankbase_custom_dashboard_logo' );
-add_action( 'admin_head',            'blankbase_admin_color_scheme');
-add_action( 'after_setup_theme',     'blankbase_hide_update_notice' );
-add_action( 'admin_menu',            'blankbase_remove_menus' );
-add_filter( 'the_generator',         'blankbase_remove_version' );
-add_filter( 'wp_list_categories',    'blankbase_remove_category_list_rel' );
-add_filter( 'the_category',          'blankbase_remove_category_list_rel' );
+add_filter( 'excerpt_length',              'blankbase_new_excerpt_length');
+add_filter( 'comment_form_default_fields', 'blankbase_comment_form' );
+add_action( 'login_enqueue_scripts',       'blankbase_custom_login' );
+add_filter( 'login_headerurl',             'blankbase_custom_login_logo_url' );
+add_filter( 'login_headertitle',           'blankbase_custom_login_logo_url_title' );
+add_action( 'admin_head',                  'blankbase_custom_dashboard_logo' );
+add_action( 'admin_head',                  'blankbase_admin_color_scheme');
+add_action( 'after_setup_theme',           'blankbase_hide_update_notice' );
+add_action( 'admin_menu',                  'blankbase_remove_menus' );
+add_filter( 'the_generator',               'blankbase_remove_version' );
+add_filter( 'wp_list_categories',          'blankbase_remove_category_list_rel' );
+add_filter( 'the_category',                'blankbase_remove_category_list_rel' );
