@@ -15,8 +15,14 @@
 				get_template_part( 'partials/content/content', get_post_format() );
 				
 			endwhile;
-			
-			blankbase_paging_nav();
+
+			// the_posts_navigation();
+			the_posts_pagination( array(
+				'mid_size'           => 1,
+				'prev_text'          => __( 'Previous', 'blankbase' ),
+				'next_text'          => __( 'Next', 'blankbase' ), 
+				'screen_reader_text' => __( 'Posts navigation', 'blankbase') 
+			) );
 			
 		else:
 			

@@ -15,8 +15,12 @@
 				get_template_part( 'partials/content/content', get_post_format() );
 				
 			endwhile;
-			
-			blankbase_post_nav();
+
+			the_post_navigation( array(
+				'prev_text'          => __( 'Previous Post', 'blankbase' ),
+				'next_text'          => __( 'Next Post', 'blankbase' ), 
+				'screen_reader_text' => __( 'Post navigation', 'blankbase')
+			) );
 			
 			if ( comments_open() || get_comments_number() ) 
 				comments_template();

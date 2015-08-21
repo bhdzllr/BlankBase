@@ -67,14 +67,15 @@ Version: 1.0.0
 	* [ ] Better Comment Markup
 * [ ] Image
 * [ ] Search
+* [ ] Modify HTML markup (pagination, navigation, comments, etc.)
 * [ ] Avatars instead of Gravatars
 * [ ] Admin color style: Custom color scheme for backend and default
 * [ ] Read more always on specific post types
 * [ ] Featured Posts out of flow and in extra container
-* [ ] Function in widgets (individual menu/child pages) or plugins
 * [ ] Desktop Version Link
-* [ ] Remove Emoji's with plugin
+* [ ] Remove Emoji's
 * [ ] RTL
+* [ ] Function in widgets (individual menu/child pages) or plugins
 
 #### Child ####
 
