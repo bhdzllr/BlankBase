@@ -4,7 +4,10 @@
 	<?php if ( have_comments() ) : ?>
 
 		<h1><?php _e( 'Comments', 'blankbase' ); ?></h1>
-		<p><?php _e( 'This post currently has')?> <?php comments_number( 'no responses', 'one response', '% responses' ); ?>.</p>
+		<p>
+			<?php _e( 'This post currently has', 'blankbase' )?>
+			<?php comments_number( __( 'no responses', 'blankbase' ), __( 'one Response', 'blankbase' ), __( '% responses', 'blankbase') ); ?>
+		</p>
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
 			
@@ -18,7 +21,7 @@
 
 		<ol>
 			<?php wp_list_comments( array(
-				'callback' => 'blankbase_comment_markup',
+				// 'callback' => 'blankbase_comment_markup',
 				'format'   => 'html5',
 				'style'    => 'ol'
 			) ); ?>
@@ -51,7 +54,7 @@
 <section>
 	<?php
 
-	$commenter = wp_get_current_commenter();
+	/* $commenter = wp_get_current_commenter();
 	$req = get_option( 'require_name_email' );
 	$aria_req = ( $req ? " aria-required='true'" : '' );
 
@@ -69,7 +72,9 @@
 		'format' => 'html5'
 	);
 
-	comment_form( $comment_form_args ); 
+	comment_form( $comment_form_args ); */
+
+	comment_form();
 
 	?>
 </section>

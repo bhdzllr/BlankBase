@@ -3,7 +3,7 @@
 BlankBase is a blank WordPress theme.
 It can be used to start a new theme or as parent theme for a new child theme.
 
-Version: 1.0.0
+Version: 1.0.1
 
 
 ## Roadmap ##
@@ -54,6 +54,11 @@ Version: 1.0.0
 * [x] Screenshot
 * [x] Test with "FakerPress"
 
+### Version 1.0.1 ###
+
+* [x] Basic comments template
+* [x] Remove navigation tags (forked from "twenty*") and use native navigation
+
 ### Version 1.1.0 ###
 
 * [ ] Archive
@@ -62,9 +67,11 @@ Version: 1.0.0
 * [ ] Tag
 * [ ] Category
 * [ ] Comments
+	* [x] Basic template
 	* [ ] Load more with button
-	* [ ] Better Comment validation (AJAX and also on page)
-	* [ ] Better Comment Markup
+	* [ ] Better comment validation (AJAX and also on page)
+	* [ ] Better comment Markup
+	* [ ] Better comment navigation (pagination)
 * [ ] Image
 * [ ] Search
 * [ ] Modify HTML markup (pagination, navigation, comments, etc.)
@@ -86,9 +93,18 @@ Version: 1.0.0
 	* [ ] Backend
 
 
+## Features ##
+
+* ...
+
+
 ## Support ##
 
-### Requirements ###
+### Client Requirements ###
+
+* ...
+
+### Server Requirements ###
 
 * WordPress 4.1
 * PHP 5.3

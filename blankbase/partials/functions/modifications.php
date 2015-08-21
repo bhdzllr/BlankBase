@@ -41,7 +41,7 @@ function blankbase_comment_form() {
 			'cite' => array()
 		),
 		's' => array(),
-		'strike' => array(),
+		'strike' => array()
 		// 'strong' => array()
 	);
 }
@@ -150,7 +150,7 @@ function blankbase_remove_category_list_rel( $output ) {
  * Initialize all functions
  */
 add_filter( 'excerpt_length',              'blankbase_new_excerpt_length');
-add_filter( 'comment_form_default_fields', 'blankbase_comment_form' );
+// #33482: add_filter( 'comment_form_default_fields', 'blankbase_comment_form' );
 add_action( 'login_enqueue_scripts',       'blankbase_custom_login' );
 add_filter( 'login_headerurl',             'blankbase_custom_login_logo_url' );
 add_filter( 'login_headertitle',           'blankbase_custom_login_logo_url_title' );
