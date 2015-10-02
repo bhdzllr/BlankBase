@@ -3,7 +3,24 @@
 BlankBase is a blank WordPress theme.
 It can be used to start a new theme or as parent theme for a new child theme.
 
-Version: 1.0.1
+Version: 1.0.2
+
+
+## Features ##
+
+* ...
+
+
+## Support ##
+
+### Client Requirements ###
+
+* ...
+
+### Server Requirements ###
+
+* WordPress 4.1
+* PHP 5.3
 
 
 ## Roadmap ##
@@ -54,57 +71,30 @@ Version: 1.0.1
 * [x] Screenshot
 * [x] Test with "FakerPress"
 
-### Version 1.0.1 ###
-
-* [x] Basic comments template
-* [x] Remove navigation tags (forked from "twenty*") and use native navigation
-
 ### Version 1.1.0 ###
 
-* [ ] Archive
-* [ ] Attachment
+* [ ] Archive (Category, Taxonomy, Tag)
 * [ ] Author
-* [ ] Tag
-* [ ] Category
+* [ ] Search
+* [ ] Attachment
+	* [ ] Image
 * [ ] Comments
 	* [x] Basic template
-	* [ ] Load more with button
 	* [ ] Better comment validation (AJAX and also on page)
-	* [ ] Better comment Markup
-	* [ ] Better comment navigation (pagination)
-* [ ] Image
-* [ ] Search
-* [ ] Modify HTML markup (pagination, navigation, comments, etc.)
+	* [ ] Better comment navigation (pagination, load more)
+* [ ] Modify HTML markup (pagination, navigation, comments, etc.) -- remove this, do not modify wp markup!
+* [ ] Also use ".ico" for favicon
 * [ ] Avatars instead of Gravatars
 * [ ] Admin color style: Custom color scheme for backend and default
-* [ ] Read more always on specific post types
-* [ ] Featured Posts out of flow and in extra container
 * [ ] Desktop Version Link
 * [ ] Remove Emoji's
 * [ ] RTL
 * [ ] Function in widgets (individual menu/child pages) or plugins
 
-#### Child ####
+#### Child Example ####
 
 * [ ] Header
 	* [ ] Theme Colors
 * [ ] Styling
 	* [ ] Frontend
 	* [ ] Backend
-
-
-## Features ##
-
-* ...
-
-
-## Support ##
-
-### Client Requirements ###
-
-* ...
-
-### Server Requirements ###
-
-* WordPress 4.1
-* PHP 5.3

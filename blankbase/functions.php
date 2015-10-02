@@ -6,18 +6,37 @@
 if ( ! function_exists( 'blankbase_setup' ) ) :
 
 	function blankbase_setup() {
-		/** WordPress manages `title` */
+		/** WordPress manages `<title>` */
 		add_theme_support( 'title-tag' );
 		
-		/** Add RSS feed links to <head> for posts and comments. */
+		/** Add RSS feed links to `<head>` for posts and comments. */
 		add_theme_support( 'automatic-feed-links' );
+
+$args = array(
+		// Text color and image (empty to use none).
+		'default-text-color'     => '220e10',
+		'default-image'          => '%s/images/headers/circle.png',
+
+		// Set height and width, with a maximum value for the width.
+		'height'                 => 230,
+		'width'                  => 1600,
+
+		// Callbacks for styling the header and the admin preview.
+		'wp-head-callback'       => 'twentythirteen_header_style',
+		'admin-head-callback'    => 'twentythirteen_admin_header_style',
+		'admin-preview-callback' => 'twentythirteen_admin_header_image',
+	);
 
 		/** Add custom header */
 		add_theme_support( 'custom-header', array(
+			'default-text-color' => '#222222',
 			'width'              => 980,
 			'height'             => 300,
 			'flex-height'        => true,
 			'flex-width'         => true,
+
+			// Callback for styling the header
+			'wp-head-callback'   => 'blankbase_header_style',
 		) );
 		
 		/** Add support for featured content */
@@ -83,99 +102,138 @@ endif;
  *
  * @link http://kwight.ca/2012/12/02/adding-a-logo-uploader-to-your-wordpress-site-with-the-theme-customizer/
  */
-function blankbase_theme_customizer( $wp_customize ) {
-	$wp_customize->add_section( 'blankbase_logo_section' , array(
-		'title'       => __( 'Logo', 'blankbase' ),
-		'priority'    => 30,
-		'description' => 'Logo upload, does not replace site title and tagline',
-	) );
+if ( ! function_exists( 'blankbase_theme_customizer' ) ) :
 
-	$wp_customize->add_setting( 'blankbase_logo' );
+	function blankbase_theme_customizer( $wp_customize ) {
+		$wp_customize->add_section( 'blankbase_logo_section' , array(
+			'title'       => __( 'Logo', 'blankbase' ),
+			'priority'    => 30,
+			'description' => 'Logo upload, does not replace site title and tagline',
+		) );
 
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'blankbase_logo', array(
-		'label'    => __( 'Logo', 'themeslug' ),
-		'section'  => 'blankbase_logo_section',
-		'settings' => 'blankbase_logo',
-	) ) );
-}
+		$wp_customize->add_setting( 'blankbase_logo' );
+
+		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'blankbase_logo', array(
+			'label'    => __( 'Logo', 'themeslug' ),
+			'section'  => 'blankbase_logo_section',
+			'settings' => 'blankbase_logo',
+		) ) );
+	}
+
+endif;
+
+/**
+ * Add header style for title and tagline
+ */
+if ( ! function_exists( 'blankbase_header_style' ) ) :
+
+	function blankbase_header_style() {
+		$text_color = get_header_textcolor();
+
+		?>
+		<style type="text/css" id="blankbase-header-css">
+
+		.site-title,
+		.site-title a,
+		.site-tagline {
+			color: #<?php echo esc_attr( $text_color ); ?>;
+		}
+
+		</style>
+		<?php
+	}
+
+endif;
 
 /**
  * Sidebars and widgets
  */
-function blankbase_widgets_init() {
-	register_sidebar( array(
-		'name'          => __( 'Primary Sidebar', 'blankbase' ),
-		'id'            => 'sidebar-primary',
-		'description'   => __( 'Primary sidebar, e.g. for secondary menu', 'blankbase' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
-	) );
-	
-	register_sidebar( array(
-		'name'          => __( 'Content Aside', 'blankbase' ),
-		'id'            => 'aside-content',
-		'description'   => __( 'Content Aside, additional sidebar that appears in the content.', 'blankbase' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
-	) );
-	
-	register_sidebar( array(
-		'name'          => __( 'Footer Widget Area', 'blankbase' ),
-		'id'            => 'aside-footer',
-		'description'   => __( 'Footer Widget Area, appears in the footer section of the site.', 'blankbase' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
-	) );
-}
+if ( ! function_exists( 'blankbase_widgets_init' ) ) :
+
+	function blankbase_widgets_init() {
+		register_sidebar( array(
+			'name'          => __( 'Primary Sidebar', 'blankbase' ),
+			'id'            => 'sidebar-primary',
+			'description'   => __( 'Primary sidebar, e.g. for secondary menu', 'blankbase' ),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h1 class="widget-title">',
+			'after_title'   => '</h1>',
+		) );
+		
+		register_sidebar( array(
+			'name'          => __( 'Content Aside', 'blankbase' ),
+			'id'            => 'aside-content',
+			'description'   => __( 'Content Aside, additional sidebar that appears in the content.', 'blankbase' ),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h1 class="widget-title">',
+			'after_title'   => '</h1>',
+		) );
+		
+		register_sidebar( array(
+			'name'          => __( 'Footer Widget Area', 'blankbase' ),
+			'id'            => 'aside-footer',
+			'description'   => __( 'Footer Widget Area, appears in the footer section of the site.', 'blankbase' ),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h1 class="widget-title">',
+			'after_title'   => '</h1>',
+		) );
+	}
+
+endif;
 
 /**
  * Add styles and scripts to "wp_head()"
  */
-function blankbase_scripts_header() {
-	/** Load HTML5-Tag generator for IE */
-	// Hardcoded in "header.php", because it must be loaded before all stylesheets
-	// wp_enqueue_script( 'createHTML5Elements', get_template_directory_uri() . '/js/createHTML5Elements.js' );
-	// wp_script_add_data( 'createHTML5Elements', 'conditional', 'lte IE 9' );
+if ( ! function_exists( 'blankbase_stylesnscripts' ) ) :
 
-	/** Load main stylesheet */
-	wp_enqueue_style( 'style', get_stylesheet_uri() );
-	
-	/** Load IE specific stylesheet */
-	wp_enqueue_style( 'lte8-fix', get_template_directory_uri() . '/css/lte8-fix.css', array( 'style' ) );
-	wp_style_add_data( 'lte8-fix', 'conditional', 'lte IE 8' );
-	
-	/** Load IE specific stylesheet */
-	wp_enqueue_style( 'lte7-fix', get_template_directory_uri() . '/css/lte7-fix.css', array( 'style' ) );
-	wp_style_add_data( 'lte7-fix', 'conditional', 'lte IE 7' );
-	
-	/** Prevent FOUC for `no-js` */
-	wp_enqueue_script( 'fouc', get_template_directory_uri() . '/js/fouc.js');
+	function blankbase_stylesnscripts() {
+		/** Load HTML5-Tag generator for IE */
+		// Hardcoded in "header.php", because it must be loaded before all stylesheets
+		// wp_enqueue_script( 'createHTML5Elements', get_template_directory_uri() . '/js/createHTML5Elements.js' );
+		// wp_script_add_data( 'createHTML5Elements', 'conditional', 'lte IE 9' );
 
-	/** Add jquery to footer */
-	wp_enqueue_script( 'jquery-blankbase', get_template_directory_uri() . '/js/vendor/jquery.min.js', array(), false, true );
+		/** Load main stylesheet */
+		wp_enqueue_style( 'style', get_stylesheet_uri() );
+		
+		/** Load IE specific stylesheet */
+		wp_enqueue_style( 'lte8-fix', get_template_directory_uri() . '/css/lte8-fix.css', array( 'style' ) );
+		wp_style_add_data( 'lte8-fix', 'conditional', 'lte IE 8' );
+		
+		/** Load IE specific stylesheet */
+		wp_enqueue_style( 'lte7-fix', get_template_directory_uri() . '/css/lte7-fix.css', array( 'style' ) );
+		wp_style_add_data( 'lte7-fix', 'conditional', 'lte IE 7' );
+		
+		/** Prevent FOUC for `no-js` */
+		wp_enqueue_script( 'fouc', get_template_directory_uri() . '/js/fouc.js');
 
-	/** Add plugins.js to footer */
-	wp_enqueue_script( 'plugins-js', get_template_directory_uri() . '/js/vendor/plugins.js', array( 'jquery-blankbase' ), false, true );
-	
-	/** Add main.js to footer */
-	wp_enqueue_script( 'main-js', get_template_directory_uri() . '/js/main.js', array( 'plugins-js' ), false, true );
-}
+		/** Add jquery to footer */
+		wp_enqueue_script( 'jquery-blankbase', get_template_directory_uri() . '/js/vendor/jquery.min.js', array(), false, true );
+
+		/** Add plugins.js to footer */
+		wp_enqueue_script( 'plugins-js', get_template_directory_uri() . '/js/vendor/plugins.js', array( 'jquery-blankbase' ), false, true );
+		
+		/** Add main.js to footer */
+		wp_enqueue_script( 'main-js', get_template_directory_uri() . '/js/main.js', array( 'plugins-js' ), false, true );
+	}
+
+endif;
 
 /**
  * Include helpers and custom functions
  * Can be outsourced into plug-ins later
  */
-function blankbase_includes() {
-	require_once 'partials/functions/template-tags.php';
-	require_once 'partials/functions/modifications.php';
-	require_once 'partials/functions/helpers.php';
-}
+if ( ! function_exists( 'blankbase_includes' ) ) :
+
+	function blankbase_includes() {
+		require_once 'partials/functions/template-tags.php';
+		require_once 'partials/functions/modifications.php';
+		require_once 'partials/functions/helpers.php';
+	}
+
+endif;
 
 /**
  * Initialize all functions
@@ -183,5 +241,5 @@ function blankbase_includes() {
 add_action( 'after_setup_theme',  'blankbase_setup',            1 );
 add_action( 'customize_register', 'blankbase_theme_customizer'    );
 add_action( 'widgets_init',       'blankbase_widgets_init'        );
-add_action( 'wp_enqueue_scripts', 'blankbase_scripts_header'      );
+add_action( 'wp_enqueue_scripts', 'blankbase_stylesnscripts'      );
 add_action( 'after_setup_theme',  'blankbase_includes',         1 );

@@ -31,12 +31,12 @@
 			<?php endif; ?>
 		
 			<?php if ( display_header_text() ) : ?>
-			<h1>
+			<h1 class="site-title">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo( 'name' ); ?> - <?php esc_attr_e( 'Home', 'blankbase' ); ?>" rel="home">
 					<?php bloginfo( 'name' ); ?>
 				</a>
 			</h1>
-			<p><?php bloginfo( 'description', 'display' ); ?></p>
+			<p class="site-tagline"><?php bloginfo( 'description', 'display' ); ?></p>
 			<?php endif; ?>
 			
 			<a href="#" title="<?php esc_attr_e( 'Skip to content', 'blankbase' ); ?>" class="screen-reader-text">
@@ -59,7 +59,7 @@
 			<?php wp_nav_menu( array(
 				'theme_location' => 'primary',
 				'container'      => false, 
+				// 'exclude'        => '',
 				// 'depth'          => 1, 
-				// 'exclude'        => ''
 			) ); ?>
 		</nav>

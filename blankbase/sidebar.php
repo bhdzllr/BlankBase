@@ -4,19 +4,24 @@
 	
 <?php else : ?>
 
-	<?php _e( 'Search', 'blankbase' ); ?>
+<aside>
+	<h1><?php _e( 'Search', 'blankbase' ); ?></h1>
 	<?php get_search_form(); ?>
 
-	<?php _e( 'Submenu', 'blankbase' ); ?>
-	<?php 
-		wp_nav_menu( array( 
-			'theme_location' => 'secondary' 
-		) ); 
-	?>
+	<?php if ( has_nav_menu( 'secondary' ) ) : ?>	
+		<?php _e( 'Submenu', 'blankbase' ); ?>
+		<?php 
+			wp_nav_menu( array( 
+				'theme_location' => 'secondary',
+				'container'      => false
+			) ); 
+		?>
+	<?php endif; ?>
 
-	<?php _e( 'Pages', 'blankbase' ); ?>
+	<h1><?php _e( 'Pages', 'blankbase' ); ?></h1>
 	<ul>
 	<?php wp_list_pages(); ?>
 	</ul>
+</aside>
 
 <?php endif; ?>

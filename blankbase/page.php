@@ -1,8 +1,12 @@
 <?php get_header(); ?>
 
+		<nav>
 		<?php if (blankbase_the_breadcrumbs()) : ?>
-		<?php blankbase_the_breadcrumbs(); ?>
+
+			<?php blankbase_the_breadcrumbs(); ?>
+
 		<?php endif; ?>
+		</nav>
 		
 		<main role="main">
 		<?php
@@ -24,11 +28,11 @@
 			get_template_part( 'partials/content/content', 'none' );
 			
 		}
+
+		get_template_part( 'partials/sidebar/sidebar-content' ); // get_sidebar( 'content' );
 		
 		?>
 		</main>
-
-		<?php get_template_part( 'partials/sidebar/sidebar-content' ); // get_sidebar( 'content' ); ?>
 		
 		<?php get_sidebar(); ?>
 

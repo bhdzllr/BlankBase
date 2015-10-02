@@ -5,148 +5,192 @@
  * 
  * @return int Excerpt length by words
  */
-function blankbase_new_excerpt_length() {
-	return 55;
-}
+if (! function_exists( 'blankbase_new_excerpt_length' ) ) :
+
+	function blankbase_new_excerpt_length() {
+		return 55;
+	}
+
+endif;
 
 /**
  * Modify comment form
  */
-function blankbase_comment_form( $fields ) {
-	global $allowedtags;
+if (! function_exists( 'blankbase_comment_form' ) ) :
 
-	$allowedtags = array(
-		'a' => array(
-			'href'  => array(),
-			'title' => array()
-		),
-		// 'abbr' => array(
-		// 	'title' => array()
-		// ),
-		// 'acronym' => array(
-		// 	'title' => array()
-		// ),
-		// 'b' => array(),
-		'blockquote' => array(
-			'cite'  => array(),
-		),
-		'cite' => array(),
-		'code' => array(),
-		'del' => array(
-			'datetime' => array()
-		),
-		// 'em' => array(),
-		// 'i' => array(),
-		'q' => array(
-			'cite' => array()
-		),
-		's' => array(),
-		'strike' => array()
-		// 'strong' => array()
-	);
+	function blankbase_comment_form( $fields ) {
+		global $allowedtags;
 
-	return $fields;
-}
+		$allowedtags = array(
+			'a' => array(
+				'href'  => array(),
+				'title' => array()
+			),
+			// 'abbr' => array(
+			// 	'title' => array()
+			// ),
+			// 'acronym' => array(
+			// 	'title' => array()
+			// ),
+			// 'b' => array(),
+			'blockquote' => array(
+				'cite'  => array(),
+			),
+			'cite' => array(),
+			'code' => array(),
+			'del' => array(
+				'datetime' => array()
+			),
+			// 'em' => array(),
+			// 'i' => array(),
+			'q' => array(
+				'cite' => array()
+			),
+			's' => array(),
+			'strike' => array()
+			// 'strong' => array()
+		);
+
+		return $fields;
+	}
+
+endif;
 
 /**
  * Add custom style to login form
  */
-function blankbase_custom_login() {
-	wp_enqueue_style( 'custom-login', get_template_directory_uri() . '/css/style-login.css' );
-}
+if (! function_exists( 'blankbase_custom_login' ) ) :
+
+	function blankbase_custom_login() {
+		wp_enqueue_style( 'custom-login', get_template_directory_uri() . '/css/style-login.css' );
+	}
+
+endif;
 
 /**
  * Add custom URL to login logo
  *
  * @return string Home URL
  */
-function blankbase_custom_login_logo_url() {
-	return home_url();
-}
+if (! function_exists( 'blankbase_custom_login_logo_url' ) ) :
+
+	function blankbase_custom_login_logo_url() {
+		return home_url();
+	}
+
+endif;
 
 /**
  * Add custom title to login logo
  *
  * @return string Title for logo URL
  */
-function blankbase_custom_login_logo_url_title() {
-	return get_bloginfo( 'name' ) . ' - ' . get_bloginfo( 'description' );
-}
+if (! function_exists( 'blankbase_custom_login_logo_url_title' ) ) :
+
+	function blankbase_custom_login_logo_url_title() {
+		return get_bloginfo( 'name' ) . ' - ' . get_bloginfo( 'description' );
+	}
+
+endif;
 
 /**
  * Add custom dashboard logo
  */
-function blankbase_custom_dashboard_logo() {
-	echo '
-	<style type="text/css">
-		#header-logo {
-			background-image: url(' . get_bloginfo('template_directory') . '/img/logo-dashboard.png) !important;
-		}
-	</style>
-	';
-}
+if (! function_exists( 'blankbase_custom_dashboard_logo' ) ) :
+
+	function blankbase_custom_dashboard_logo() {
+		echo '
+		<style type="text/css">
+			#header-logo {
+				background-image: url(' . get_bloginfo('template_directory') . '/img/logo-dashboard.png) !important;
+			}
+		</style>
+		';
+	}
+
+endif;
 
 /**
  * Remove admin color scheme picker for user with less permissions
  * and add new color schemes
  */
-function blankbase_admin_color_scheme() {
-	if ( ! current_user_can( 'update_core' ) )
-		remove_action( 'admin_color_scheme_picker', 'admin_color_scheme_picker' );
-	
-	/* wp_admin_css_color(
-		'classic',
-		__('classic'),
-		admin_url("css/colors-classic.css"),
-		array('#654321', '#14568A', '#D54E21', '#2683AE')
-	); */
-}
+if (! function_exists( 'blankbase_admin_color_scheme' ) ) :
+
+	function blankbase_admin_color_scheme() {
+		if ( ! current_user_can( 'update_core' ) )
+			remove_action( 'admin_color_scheme_picker', 'admin_color_scheme_picker' );
+		
+		/* wp_admin_css_color(
+			'classic',
+			__('classic'),
+			admin_url("css/colors-classic.css"),
+			array('#654321', '#14568A', '#D54E21', '#2683AE')
+		); */
+	}
+
+endif;
 
 /**
  * Hide updates from users with less permissions
  */
-function blankbase_hide_update_notice() {
-	if ( ! current_user_can( 'update_core' ) )
-		remove_action( 'admin_notices', 'update_nag', 3 );
+if (! function_exists( 'blankbase_hide_update_notice' ) ) :
+
+	function blankbase_hide_update_notice() {
+		if ( ! current_user_can( 'update_core' ) )
+			remove_action( 'admin_notices', 'update_nag', 3 );
 }
+
+endif;
 
 /**
  * Remove some menus from users which are not administrators
  * for WP >= 3.1
  */
-function blankbase_remove_menus() {
-	global $menu;
-	global $current_user;
-	// get_currentuserinfo();
+if (! function_exists( 'blankbase_remove_menus' ) ) :
 
-	// if ( $current_user->user_login == 'username' ) {
-	if ( !current_user_can( 'administrator' ) ) {
-		remove_menu_page( 'link-manager.php' );
-		remove_menu_page( 'edit-comments.php' );
-		remove_menu_page( 'plugins.php' );
-		remove_menu_page( 'users.php' );
-		remove_menu_page( 'tools.php' );
-		remove_menu_page( 'options-general.php' );
-        remove_menu_page( 'edit.php?post_type=cfs' );
-		remove_menu_page( 'wpcf7' );
+	function blankbase_remove_menus() {
+		global $menu;
+		global $current_user;
+		// get_currentuserinfo();
+
+		// if ( $current_user->user_login == 'username' ) {
+		if ( !current_user_can( 'administrator' ) ) {
+			remove_menu_page( 'link-manager.php' );
+			remove_menu_page( 'edit-comments.php' );
+			remove_menu_page( 'plugins.php' );
+			remove_menu_page( 'users.php' );
+			remove_menu_page( 'tools.php' );
+			remove_menu_page( 'options-general.php' );
+	        remove_menu_page( 'edit.php?post_type=cfs' );
+			remove_menu_page( 'wpcf7' );
+		}
 	}
-}
+
+endif;
 
 /**
  * Remove Version from source
  */
-function blankbase_remove_version() {
-	return;
-}
+if (! function_exists( 'blankbase_remove_version' ) ) :
+
+	function blankbase_remove_version() {
+		return;
+	}
+
+endif;
 
 /**
  * Fix validation error with "rel" attribute
  *
  * @return string Empty string
  */
+if (! function_exists( 'blankbase_remove_category_list_rel' ) ) :
+
 function blankbase_remove_category_list_rel( $output ) {
 	return str_replace( ' rel="category tag"', '', $output );
 }
+
+endif;
 
 /**
  * Initialize all functions

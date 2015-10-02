@@ -1,53 +1,53 @@
 <?php if ( post_password_required() ) return; ?>
 
 <section id="comments">
-	<?php if ( have_comments() ) : ?>
+<?php if ( have_comments() ) : ?>
 
-		<h1><?php _e( 'Comments', 'blankbase' ); ?></h1>
-		<p>
-			<?php _e( 'This post currently has', 'blankbase' )?>
-			<?php comments_number( __( 'no responses', 'blankbase' ), __( 'one Response', 'blankbase' ), __( '% responses', 'blankbase') ); ?>
-		</p>
+	<h1><?php _e( 'Comments', 'blankbase' ); ?></h1>
+	<p>
+		<?php _e( 'This post currently has', 'blankbase' )?>
+		<?php comments_number( __( 'no responses', 'blankbase' ), __( 'one Response', 'blankbase' ), __( '% responses', 'blankbase') ); ?>
+	</p>
 
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
-			
-			<nav>
-				<h2><?php _e( 'Comment navigation', 'blankbase' ); ?></h2>
-				<?php previous_comments_link( __( 'Older Comments', 'blankbase' ) ) ?>
-				<?php next_comments_link( __( 'Newer Comments', 'blankbase' ) ); ?>
-			</nav>
-
-		<?php endif; ?>
-
-		<ol>
-			<?php wp_list_comments( array(
-				// 'callback' => 'blankbase_comment_markup',
-				'format'   => 'html5',
-				'style'    => 'ol'
-			) ); ?>
-		</ol>
-
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
-			
-			<nav>
-				<h2><?php _e( 'Comment navigation', 'blankbase' ); ?></h2>
-				<?php previous_comments_link( __( 'Older Comments', 'blankbase' ) ) ?>
-				<?php next_comments_link( __( 'Newer Comments', 'blankbase' ) ); ?>
-			</nav>
-
-		<?php endif; ?>
-
-	<?php else : ?>
-
-		<?php _e( 'No comments yet.', 'blankbase' ); ?>
+	<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
+		
+		<nav>
+			<h2><?php _e( 'Comment navigation', 'blankbase' ); ?></h2>
+			<?php previous_comments_link( __( 'Older Comments', 'blankbase' ) ) ?>
+			<?php next_comments_link( __( 'Newer Comments', 'blankbase' ) ); ?>
+		</nav>
 
 	<?php endif; ?>
 
-	<?php if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
-	
-		<?php _e( 'Comments are closed.', 'blankbase' ); ?>
-	
+	<ol>
+		<?php wp_list_comments( array(
+			// 'callback' => 'blankbase_comment_markup',
+			'format'   => 'html5',
+			'style'    => 'ol'
+		) ); ?>
+	</ol>
+
+	<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
+		
+		<nav>
+			<h2><?php _e( 'Comment navigation', 'blankbase' ); ?></h2>
+			<?php previous_comments_link( __( 'Older Comments', 'blankbase' ) ) ?>
+			<?php next_comments_link( __( 'Newer Comments', 'blankbase' ) ); ?>
+		</nav>
+
 	<?php endif; ?>
+
+<?php else : ?>
+
+	<?php _e( 'No comments yet.', 'blankbase' ); ?>
+
+<?php endif; ?>
+
+<?php if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
+
+	<?php _e( 'Comments are closed.', 'blankbase' ); ?>
+
+<?php endif; ?>
 </section>
 
 <?php if ( comments_open() ) : ?>

@@ -1,5 +1,16 @@
 # Changelog #
 
+## Version 1.0.2 ##
+
+* Change names of child theme functions
+* Add check for secondary menu in "sidebar.php"
+* Make parent theme main functions rewritable (`! function_exists()`)
+  and rename it
+* Add `<nav>` tag for breadcrumbs
+* Code styling (intentions)
+* Move content sidebar into `<main>`
+* Code for header text color
+
 
 ## Version 1.0.1 ##
 

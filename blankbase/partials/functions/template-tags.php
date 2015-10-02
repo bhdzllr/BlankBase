@@ -70,7 +70,7 @@ function blankbase_comment_markup( $comment, $args, $depth ) {
 	?>
 	<<?php echo $tag; ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ); ?>>
 	<article id="comment-<?php comment_ID(); ?>" <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ); ?>>
-		<footer>
+		<header>
 			<div>
 				<?php if ( 0 != $args['avatar_size'] ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
 				<?php printf( __( '%s <span class="says">says:</span>' ), sprintf( '<b class="fn">%s</b>', get_comment_author_link() ) ); ?>
@@ -89,19 +89,19 @@ function blankbase_comment_markup( $comment, $args, $depth ) {
 			<?php if ( '0' == $comment->comment_approved ) : ?>
 				<p><?php _e( 'Your comment is awaiting moderation.' ); ?></p>
 			<?php endif; ?>
-		</footer>
+		</header>
 
 		<div>
 			<?php comment_text(); ?>
 		</div>
 
-		<div>
+		<footer>
 			<?php comment_reply_link( array_merge( $args, array(
 				'add_below' => 'comment',
 				'depth'     => $depth,
 				'max_depth' => $args['max_depth']
 			) ) ); ?>
-		</div>
+		</footer>
 	</article>
 	<?php   
 }

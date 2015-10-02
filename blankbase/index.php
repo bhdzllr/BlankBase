@@ -1,8 +1,12 @@
 <?php get_header(); ?>
 
+		<nav>
 		<?php if (blankbase_the_breadcrumbs()) : ?>
-		<?php blankbase_the_breadcrumbs(); ?>
+
+			<?php blankbase_the_breadcrumbs(); ?>
+
 		<?php endif; ?>
+		</nav>
 		
 		<main role="main">
 		<?php
@@ -24,17 +28,17 @@
 				'screen_reader_text' => __( 'Posts navigation', 'blankbase') 
 			) );
 			
-		else:
+		else :
 			
 			get_template_part( 'partials/content/content', 'none' );
 			
 		endif;
 		
+		get_template_part( 'partials/sidebar/sidebar-content' ); // get_sidebar( 'content' );
+
 		?>
 		</main>
 
-		<?php get_template_part( 'partials/sidebar/sidebar-content' ); // get_sidebar( 'content' ); ?>
-		
 		<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>
