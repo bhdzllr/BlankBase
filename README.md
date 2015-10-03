@@ -73,28 +73,33 @@ Version: 1.0.2
 
 ### Version 1.1.0 ###
 
-* [ ] Archive (Category, Taxonomy, Tag)
+* [x] Archive (Author, Category, Taxonomy, Date, Tag)
+* [x] Comments - basic template
+* [x] Singular
+* [x] Search + form
+* [x] Image, no "attachment.php"
+* [x] RTL
+
+
+### Version 1.2.0 ###
+
 * [ ] Author
-* [ ] Search
-* [ ] Attachment
-	* [ ] Image
 * [ ] Comments
-	* [x] Basic template
 	* [ ] Better comment validation (AJAX and also on page)
 	* [ ] Better comment navigation (pagination, load more)
-* [ ] Modify HTML markup (pagination, navigation, comments, etc.) -- remove this, do not modify wp markup!
+* [ ] Image navigation in galleries
+* [ ] Update language files
 * [ ] Also use ".ico" for favicon
 * [ ] Avatars instead of Gravatars
 * [ ] Admin color style: Custom color scheme for backend and default
-* [ ] Desktop Version Link
 * [ ] Remove Emoji's
-* [ ] RTL
 * [ ] Function in widgets (individual menu/child pages) or plugins
 
-#### Child Example ####
+### Child Example ###
 
 * [ ] Header
 	* [ ] Theme Colors
 * [ ] Styling
 	* [ ] Frontend
+	* [ ] Desktop Version Link
 	* [ ] Backend

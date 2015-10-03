@@ -118,6 +118,24 @@ template {
 	display: none;
 }
 
+.screen-reader-text {
+	position: absolute !important;
+	overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px);
+
+	width: 1px;
+	height: 1px;
+}
+
+.screen-reader-text:focus {
+	display: block;
+	clip: auto !important;
+	z-index: 100000;
+
+	width: auto;
+	height: auto;
+}
+
 .browsehappy {
 	background-color: #FFF666;
 	

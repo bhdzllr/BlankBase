@@ -1,5 +1,17 @@
 # Changelog #
 
+## Version 1.1.0 ##
+
+* Decision to not modify WordPress HTML markup (pagination, navigation, comments, etc.)
+* Add "archive.php"
+* Add "singular.php"
+* Add "search.php" and "searchform.php"
+* Add "image.php", do not add "attachment.php" because images are attachments
+* Add class for screen reader text
+* Add empty "rtl.css" with link to WordPress codex
+* Update language files ("de_DE")
+
+
 ## Version 1.0.2 ##
 
 * Change names of child theme functions
@@ -10,6 +22,7 @@
 * Code styling (intentions)
 * Move content sidebar into `<main>`
 * Code for header text color
+* Child: Function to remove more-link anchor
 
 
 ## Version 1.0.1 ##

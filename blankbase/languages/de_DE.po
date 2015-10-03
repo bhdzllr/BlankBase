@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: BlankBase\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: Fri Aug 21 2015 01:32:47 GMT+0200 (CEST)\n"
-"PO-Revision-Date: Fri Aug 21 2015 01:44:13 GMT+0200 (CEST)\n"
+"PO-Revision-Date: Sat Oct 03 2015 13:48:24 GMT+0200 (CEST)\n"
 "Last-Translator: admin <admin@testcenter.io>\n"
 "Language-Team: \n"
 "Language: German\n"
@@ -22,6 +22,98 @@ msgstr ""
 "X-Generator: Loco - https://localise.biz/\n"
 "X-Loco-Target-Locale: de_DE"
 
+#: ../comments.php:6
+msgid "Comments"
+msgstr "Kommentare"
+
+#: ../comments.php:8
+msgid "This post currently has"
+msgstr "Dieser Beitrag hat aktuell"
+
+#: ../comments.php:9
+msgid "no responses"
+msgstr "keine Antworten"
+
+#: ../comments.php:9
+msgid "one Response"
+msgstr "eine Antwort"
+
+#: ../comments.php:9
+msgid "% responses"
+msgstr "% Antworten"
+
+#: ../comments.php:15 ../comments.php:33
+msgid "Comment navigation"
+msgstr "Kommentarnavigation"
+
+#: ../comments.php:16 ../comments.php:34
+msgid "Older Comments"
+msgstr "Ältere Kommentare"
+
+#: ../comments.php:17 ../comments.php:35
+msgid "Newer Comments"
+msgstr "Neuere Kommentare"
+
+#: ../comments.php:42
+msgid "No comments yet."
+msgstr "Keine Kommentare vorhanden."
+
+#: ../comments.php:48
+msgid "Comments are closed."
+msgstr "Kommentare sind geschlossen."
+
+#: ../image.php:24
+msgid "Previous Image"
+msgstr "Voriges Bild"
+
+#: ../image.php:25
+msgid "Next Image"
+msgstr "Nächstes Bild"
+
+#: ../search.php:9
+#, php-format
+msgid "Search Results for: %s"
+msgstr "Suchresultate für: %s"
+
+#. Name of the template
+msgid "Full Width"
+msgstr "Volle Breite"
+
+#: ../partials/functions/template-tags.php:76
+#, php-format
+msgid "%s <span class=\"says\">says:</span>"
+msgstr "%s <span class=\"says\">sagt:</span>"
+
+#: ../partials/functions/template-tags.php:82
+#, php-format
+msgctxt "1: date, 2: time"
+msgid "%1$s at %2$s"
+msgstr "%1$s um %2$s"
+
+#: ../partials/functions/template-tags.php:90
+msgid "Your comment is awaiting moderation."
+msgstr "Ihr Kommentar wartet auf Moderation."
+
+#. Name of the theme
+msgid "BlankBase"
+msgstr "BlankBase"
+
+#. Theme URI of the theme
+msgid "https://github.com/bhdzllr/wp-blankbase/"
+msgstr "https://github.com/bhdzllr/wp-blankbase/"
+
+#. Description of the theme
+msgid "An empty theme with some basic settings to start a new WordPress theme."
+msgstr "Ein leeres Theme mit Basis-Einstellungen um ein neues WordPress Theme zu erstellen"
+
+#. Author of the theme
+msgid "bhdzllr"
+msgstr "bhdzllr"
+
+#. Author URI of the theme
+msgid "http://bhdzllr.com/"
+msgstr "http://bhdzllr.com/"
+
 #: ../404.php:6
 msgid "Not Found"
 msgstr "Nicht gefunden"
@@ -38,39 +130,51 @@ msgstr ""
 "existiert nicht mehr. Bitte verwenden Sie die Navigation, das Suchformular "
 "oder informieren Sie den Betreiber dieser Website. Vielen Dank."
 
-#: ../functions.php:46
+#: ../archive.php:29 ../index.php:26 ../search.php:24
+msgid "Previous"
+msgstr "Zurück"
+
+#: ../archive.php:30 ../index.php:27 ../search.php:25
+msgid "Next"
+msgstr "Weiter"
+
+#: ../archive.php:31 ../index.php:28 ../search.php:26
+msgid "Posts navigation"
+msgstr "Beitragsnavigation"
+
+#: ../functions.php:50
 msgid "Primary Menu"
 msgstr "Hauptmenü"
 
-#: ../functions.php:47
+#: ../functions.php:51
 msgid "Secondary Menu"
 msgstr "Untermenü"
 
-#: ../functions.php:88 ../functions.php:96
+#: ../functions.php:94 ../functions.php:102
 msgid "Logo"
 msgstr "Logo"
 
-#: ../functions.php:107
+#: ../functions.php:140
 msgid "Primary Sidebar"
 msgstr "Seitenleiste Primär"
 
-#: ../functions.php:109
+#: ../functions.php:142
 msgid "Primary sidebar, e.g. for secondary menu"
 msgstr "Primäre Seitenleiste, z. B. für ein Untermenü."
 
-#: ../functions.php:117
+#: ../functions.php:150
 msgid "Content Aside"
 msgstr "Seitenleiste Metainformation"
 
-#: ../functions.php:119
+#: ../functions.php:152
 msgid "Content Aside, additional sidebar that appears in the content."
 msgstr "Seitenleiste Metainformation, zusätzlich zum Hauptinhalt."
 
-#: ../functions.php:127
+#: ../functions.php:160
 msgid "Footer Widget Area"
 msgstr "Fußzeile Widget Bereich"
 
-#: ../functions.php:129
+#: ../functions.php:162
 msgid "Footer Widget Area, appears in the footer section of the site."
 msgstr "Fußzeile Widget Bereich, erscheint in der Fußzeile der Seite."
 
@@ -87,22 +191,49 @@ msgstr "Zum Inhalt wechseln"
 msgid "Skip to menu"
 msgstr "Zum Menü wechseln"
 
-#: ../sidebar.php:7
+#: ../image.php:35 ../partials/content/content-aside.php:38 ..
+#: partials/content/content-gallery.php:38 ../partials/content/content-image.php:
+#: 38 ../partials/content/content-link.php:38 ../partials/content/content-page.
+#: php:18 ../partials/content/content-quote.php:38 ../partials/content/content-
+#: search.php:21 ../partials/content/content-search.php:26 ..
+#: partials/content/content-video.php:38 ../partials/content/content.php:42 ..
+#: partials/functions/template-tags.php:86
+msgid "Edit"
+msgstr "Bearbeiten\n"
+
+#: ../searchform.php:2 ../searchform.php:4 ../sidebar.php:8
 msgid "Search"
 msgstr "Suche"
 
-#: ../sidebar.php:10
+#: ../searchform.php:3
+msgid "Search for &hellip;"
+msgstr "Suchen nach &hellip;"
+
+#: ../sidebar.php:12
 msgid "Submenu"
 msgstr "Untermenü"
 
-#: ../sidebar.php:17
+#: ../sidebar.php:21
 msgid "Pages"
 msgstr "Seiten"
+
+#: ../single.php:24 ../singular.php:29
+msgid "Previous Post"
+msgstr "Vorheriger Beitrag"
+
+#: ../single.php:25 ../singular.php:30
+msgid "Next Post"
+msgstr "Nächster Beitrag"
+
+#: ../single.php:26 ../singular.php:31
+msgid "Post navigation"
+msgstr "Beitragsnavigation"
 
 #: ../partials/content/content-aside.php:12 ../partials/content/content-gallery.
 #: php:12 ../partials/content/content-image.php:12 ../partials/content/content-
 #: link.php:12 ../partials/content/content-quote.php:12 ..
-#: partials/content/content-video.php:12 ../partials/content/content.php:12
+#: partials/content/content-search.php:6 ../partials/content/content-video.php:
+#: 12 ../partials/content/content.php:12
 msgid "Permalink to "
 msgstr "Permalink zu"
 
@@ -135,14 +266,6 @@ msgstr "1 Kommentar"
 msgid "% Comments"
 msgstr "% Kommentare"
 
-#: ../partials/content/content-aside.php:38 ../partials/content/content-gallery.
-#: php:38 ../partials/content/content-image.php:38 ../partials/content/content-
-#: link.php:38 ../partials/content/content-page.php:18 ..
-#: partials/content/content-quote.php:38 ../partials/content/content-video.php:
-#: 38 ../partials/content/content.php:42
-msgid "Edit"
-msgstr "Bearbeiten\n"
-
 #: ../partials/content/content-aside.php:63 ../partials/content/content-gallery.
 #: php:63 ../partials/content/content-image.php:63 ../partials/content/content-
 #: link.php:63 ../partials/content/content-quote.php:63 ..
@@ -166,43 +289,6 @@ msgstr ""
 msgid "Sorry, no content here."
 msgstr "Entschuldigung, kein Inhalt gefunden."
 
-#: ../partials/content/content.php:57
+#: ../partials/content/content-search.php:15 ../partials/content/content.php:57
 msgid "Continue reading"
 msgstr "Weiterlesen"
-
-#: ../partials/functions/template-tags.php:38
-msgid "Previous"
-msgstr "Zurück"
-
-#: ../partials/functions/template-tags.php:39
-msgid "Next"
-msgstr "Weiter"
-
-#: ../partials/functions/template-tags.php:46
-msgid "Posts navigation"
-msgstr "Beitragsnavigation"
-
-#: ../partials/functions/template-tags.php:68 ../partials/functions/template-tags.
-#: php:97
-msgid "Post navigation"
-msgstr "Beitragsnavigation"
-
-#: ../partials/functions/template-tags.php:72
-msgid "Older Posts"
-msgstr "Ältere Beiträge"
-
-#: ../partials/functions/template-tags.php:73
-msgid "Newer Posts"
-msgstr "Neuere Beiträge"
-
-#: ../partials/functions/template-tags.php:102
-msgid "Published In %title"
-msgstr "Veröffentlicht in %title"
-
-#: ../partials/functions/template-tags.php:104
-msgid "Previous Post"
-msgstr "Vorheriger Beitrag"
-
-#: ../partials/functions/template-tags.php:105
-msgid "Next Post"
-msgstr "Nächster Beitrag"

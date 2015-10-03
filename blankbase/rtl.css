@@ -1,0 +1,13 @@
+/**
+ * RTL
+ * Easy, but read the link first
+ * 
+ * @link: http://codex.wordpress.org/Right_to_Left_Language_Support
+*/
+
+body {
+	direction: rtl;
+	unicode-bidi: embed;
+
+	text-align: right;
+}

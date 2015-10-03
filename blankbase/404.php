@@ -16,8 +16,6 @@
 
 				<?php get_search_form(); ?>
 			</article>
-
-			<?php get_template_part( 'partials/sidebar/sidebar-content' );  // get_sidebar( 'content' ); ?>
 		</main>
 		
 		<?php get_sidebar(); ?>

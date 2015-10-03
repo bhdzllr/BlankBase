@@ -12,21 +12,6 @@ if ( ! function_exists( 'blankbase_setup' ) ) :
 		/** Add RSS feed links to `<head>` for posts and comments. */
 		add_theme_support( 'automatic-feed-links' );
 
-$args = array(
-		// Text color and image (empty to use none).
-		'default-text-color'     => '220e10',
-		'default-image'          => '%s/images/headers/circle.png',
-
-		// Set height and width, with a maximum value for the width.
-		'height'                 => 230,
-		'width'                  => 1600,
-
-		// Callbacks for styling the header and the admin preview.
-		'wp-head-callback'       => 'twentythirteen_header_style',
-		'admin-head-callback'    => 'twentythirteen_admin_header_style',
-		'admin-preview-callback' => 'twentythirteen_admin_header_image',
-	);
-
 		/** Add custom header */
 		add_theme_support( 'custom-header', array(
 			'default-text-color' => '#222222',

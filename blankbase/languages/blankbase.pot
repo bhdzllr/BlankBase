@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: BlankBase\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: Fri Aug 21 2015 01:32:47 GMT+0200 (CEST)\n"
-"POT-Revision-Date: Fri Aug 21 2015 01:32:49 GMT+0200 (CEST)\n"
+"POT-Revision-Date: Sat Oct 03 2015 13:46:30 GMT+0200 (CEST)\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -37,39 +37,91 @@ msgid ""
 "						Thank you."
 msgstr ""
 
-#: ../functions.php:46
+#: ../archive.php:29 ../index.php:26 ../search.php:24
+msgid "Previous"
+msgstr ""
+
+#: ../archive.php:30 ../index.php:27 ../search.php:25
+msgid "Next"
+msgstr ""
+
+#: ../archive.php:31 ../index.php:28 ../search.php:26
+msgid "Posts navigation"
+msgstr ""
+
+#: ../comments.php:6
+msgid "Comments"
+msgstr ""
+
+#: ../comments.php:8
+msgid "This post currently has"
+msgstr ""
+
+#: ../comments.php:9
+msgid "no responses"
+msgstr ""
+
+#: ../comments.php:9
+msgid "one Response"
+msgstr ""
+
+#: ../comments.php:9
+msgid "% responses"
+msgstr ""
+
+#: ../comments.php:15 ../comments.php:33
+msgid "Comment navigation"
+msgstr ""
+
+#: ../comments.php:16 ../comments.php:34
+msgid "Older Comments"
+msgstr ""
+
+#: ../comments.php:17 ../comments.php:35
+msgid "Newer Comments"
+msgstr ""
+
+#: ../comments.php:42
+msgid "No comments yet."
+msgstr ""
+
+#: ../comments.php:48
+msgid "Comments are closed."
+msgstr ""
+
+#: ../functions.php:50
 msgid "Primary Menu"
 msgstr ""
 
-#: ../functions.php:47
+#: ../functions.php:51
 msgid "Secondary Menu"
 msgstr ""
 
-#: ../functions.php:88 ../functions.php:96
+#: ../functions.php:94 ../functions.php:102
 msgid "Logo"
 msgstr ""
 
-#: ../functions.php:107
+#: ../functions.php:140
 msgid "Primary Sidebar"
 msgstr ""
 
-#: ../functions.php:109
+#: ../functions.php:142
 msgid "Primary sidebar, e.g. for secondary menu"
 msgstr ""
 
-#: ../functions.php:117
+#: ../functions.php:150
 msgid "Content Aside"
 msgstr ""
 
-#: ../functions.php:119
+#: ../functions.php:152
 msgid "Content Aside, additional sidebar that appears in the content."
 msgstr ""
 
-#: ../functions.php:127
+#: ../functions.php:160
 msgid "Footer Widget Area"
 msgstr ""
 
-#: ../functions.php:129
+#: ../functions.php:162
 msgid "Footer Widget Area, appears in the footer section of the site."
 msgstr ""
 
@@ -86,22 +138,66 @@ msgstr ""
 msgid "Skip to menu"
 msgstr ""
 
-#: ../sidebar.php:7
+#: ../image.php:24
+msgid "Previous Image"
+msgstr ""
+
+#: ../image.php:25
+msgid "Next Image"
+msgstr ""
+
+#: ../image.php:35 ../partials/content/content-aside.php:38 ..
+#: /partials/content/content-gallery.php:38 ../partials/content/content-image.php:
+#: 38 ../partials/content/content-link.php:38 ../partials/content/content-page.
+#: php:18 ../partials/content/content-quote.php:38 ../partials/content/content-
+#: search.php:21 ../partials/content/content-search.php:26 ..
+#: /partials/content/content-video.php:38 ../partials/content/content.php:42 ..
+#: /partials/functions/template-tags.php:86
+msgid "Edit"
+msgstr ""
+
+#: ../search.php:9
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: ../searchform.php:2 ../searchform.php:4 ../sidebar.php:8
 msgid "Search"
 msgstr ""
 
-#: ../sidebar.php:10
+#: ../searchform.php:3
+msgid "Search for &hellip;"
+msgstr ""
+
+#: ../sidebar.php:12
 msgid "Submenu"
 msgstr ""
 
-#: ../sidebar.php:17
+#: ../sidebar.php:21
 msgid "Pages"
+msgstr ""
+
+#: ../single.php:24 ../singular.php:29
+msgid "Previous Post"
+msgstr ""
+
+#: ../single.php:25 ../singular.php:30
+msgid "Next Post"
+msgstr ""
+
+#: ../single.php:26 ../singular.php:31
+msgid "Post navigation"
+msgstr ""
+
+#. Name of the template
+msgid "Full Width"
 msgstr ""
 
 #: ../partials/content/content-aside.php:12 ../partials/content/content-gallery.
 #: php:12 ../partials/content/content-image.php:12 ../partials/content/content-
 #: link.php:12 ../partials/content/content-quote.php:12 ..
-#: /partials/content/content-video.php:12 ../partials/content/content.php:12
+#: /partials/content/content-search.php:6 ../partials/content/content-video.php:
+#: 12 ../partials/content/content.php:12
 msgid "Permalink to "
 msgstr ""
 
@@ -134,14 +230,6 @@ msgstr ""
 msgid "% Comments"
 msgstr ""
 
-#: ../partials/content/content-aside.php:38 ../partials/content/content-gallery.
-#: php:38 ../partials/content/content-image.php:38 ../partials/content/content-
-#: link.php:38 ../partials/content/content-page.php:18 ..
-#: /partials/content/content-quote.php:38 ../partials/content/content-video.php:
-#: 38 ../partials/content/content.php:42
-msgid "Edit"
-msgstr ""
-
 #: ../partials/content/content-aside.php:63 ../partials/content/content-gallery.
 #: php:63 ../partials/content/content-image.php:63 ../partials/content/content-
 #: link.php:63 ../partials/content/content-quote.php:63 ..
@@ -163,43 +251,41 @@ msgstr ""
 msgid "Sorry, no content here."
 msgstr ""
 
-#: ../partials/content/content.php:57
+#: ../partials/content/content-search.php:15 ../partials/content/content.php:57
 msgid "Continue reading"
 msgstr ""
 
-#: ../partials/functions/template-tags.php:38
-msgid "Previous"
+#: ../partials/functions/template-tags.php:76
+#, php-format
+msgid "%s <span class=\"says\">says:</span>"
 msgstr ""
 
-#: ../partials/functions/template-tags.php:39
-msgid "Next"
+#: ../partials/functions/template-tags.php:82
+#, php-format
+msgctxt "1: date, 2: time"
+msgid "%1$s at %2$s"
 msgstr ""
 
-#: ../partials/functions/template-tags.php:46
-msgid "Posts navigation"
+#: ../partials/functions/template-tags.php:90
+msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: ../partials/functions/template-tags.php:68 ../partials/functions/template-tags.
-#: php:97
-msgid "Post navigation"
+#. Name of the theme
+msgid "BlankBase"
 msgstr ""
 
-#: ../partials/functions/template-tags.php:72
-msgid "Older Posts"
+#. Theme URI of the theme
+msgid "https://github.com/bhdzllr/wp-blankbase/"
 msgstr ""
 
-#: ../partials/functions/template-tags.php:73
-msgid "Newer Posts"
+#. Description of the theme
+msgid "An empty theme with some basic settings to start a new WordPress theme."
 msgstr ""
 
-#: ../partials/functions/template-tags.php:102
-msgid "Published In %title"
+#. Author of the theme
+msgid "bhdzllr"
 msgstr ""
 
-#: ../partials/functions/template-tags.php:104
-msgid "Previous Post"
-msgstr ""
-
-#: ../partials/functions/template-tags.php:105
-msgid "Next Post"
+#. Author URI of the theme
+msgid "http://bhdzllr.com/"
 msgstr ""
