@@ -4,6 +4,7 @@
 ## HEAD ##
 
 * Update "header.php"
+* Bring back link rel favicon.
 
 
 ## Version 1.1.0 ##

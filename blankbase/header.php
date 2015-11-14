@@ -14,10 +14,11 @@
 		<meta name="robots" content="index, follow" />
 
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		
+
 		<script type="text/javascript">document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/, 'js');</script>
 		<!--[if lt IE 9]><script type="text/javascript" src="<?php bloginfo( 'template_url' ); ?>/js/createHTML5Elements.js"></script><![endif]-->
-		
+
+		<link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/img/favicon.ico" type="image/x-icon" />
 		<link rel="profile" href="http://gmpg.org/xfn/11">
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 		<?php wp_head(); ?>
@@ -29,7 +30,7 @@
 				You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
 			</p>
 		<![endif]-->
-		
+
 		<header>
 			<?php if ( get_theme_mod( 'blankbase_logo' ) ) : ?>
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?> - <?php esc_attr_e( 'Home', 'blankbase' ); ?>" rel="home">
@@ -59,9 +60,9 @@
 			</a>
 			<?php endif; ?>
 		</header>
-		
+
 		<?php get_search_form(); ?>
-		
+
 		<nav>			
 			<?php wp_nav_menu( array(
 				'theme_location' => 'primary',
