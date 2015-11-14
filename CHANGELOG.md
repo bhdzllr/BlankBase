@@ -5,6 +5,7 @@
 
 * Update "header.php"
 * Bring back link rel favicon.
+* Refactor "style.css".
 
 
 ## Version 1.1.0 ##

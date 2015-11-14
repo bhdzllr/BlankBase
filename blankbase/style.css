@@ -11,21 +11,36 @@
  * Text Domain:  blankbase
  */
 
+/**
+ * ********** Fonts **********
+ */
+
+
+
+ /**
+ * *********** Base **********
+ */
+
 html, body {
 	margin: 0;
 	padding: 0;
-	
+	/*removeIf(production)*/
+
 	color: #222222;
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	font-size: 14px;
+	/*endRemoveIf(production)*/
+	font-size: 1em;
 	line-height: 1.45em;
-	
-	text-align: left; /* "center" whole page for old browsers IE <= 6 */
 }
 
 /**
- * ********** Initializing ********** 
+ * ********** Minimal Normalize ********** 
  */
+
+html {
+	-ms-text-size-adjust: 100%;     /* IE: Prevent text size adjust after device orientation change */
+	-webkit-text-size-adjust: 100%; /* iOS: Prevent text size adjust after device orientation change */
+}
 
 article,
 aside,
@@ -35,11 +50,15 @@ figure,
 footer,
 header,
 main,
-menu,
 nav,
 section,
 summary {
 	display: block;
+}
+
+[hidden],
+template {
+	display: none;
 }
 
 audio,
@@ -51,11 +70,25 @@ video {
 	*zoom: 1;         /** IE hasLayout */
 }
 
+html,
 button,
 input,
 select,
 textarea {
-	color: #222222;
+	color: inherit;
+}
+
+input,
+select,
+textarea {
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}
+
+input, 
+textarea {
+	outline: 0;
 }
 
 embed,
@@ -64,6 +97,23 @@ object,
 video {
 	max-width: 100%; /* Make sure videos and embeds fit their containers. */
 }
+
+a img {
+	border: none;
+}
+
+audio:not([controls]) {
+	display: none;
+	height: 0;
+}
+
+abbr {
+	cursor: help;
+}
+
+/**
+ * *********** Base **********
+ */
 
 a,
 a:link,
@@ -88,94 +138,13 @@ img {
 	border: none; /** No border in older IEs, if wrapped with `a` */
 }
 
-audio:not([controls]) {
-	display: none;
-	height: 0;
-}
-
-abbr {
-	cursor: help;
-}
-
-hr {
-	border: none;
-	border-top: 1px solid #CCCCCC;
-}
-
-input, 
 textarea {
-	outline: 0;
-}
-
-textarea {
-	max-height: 320px;
-	resize: vertical;
-	overflow: auto;
 	vertical-align: top;
-}
+	overflow: auto;
 
-template {
-	display: none;
-}
+	max-height: 320px;
 
-.screen-reader-text {
-	position: absolute !important;
-	overflow: hidden;
-	clip: rect(1px, 1px, 1px, 1px);
-
-	width: 1px;
-	height: 1px;
-}
-
-.screen-reader-text:focus {
-	display: block;
-	clip: auto !important;
-	z-index: 100000;
-
-	width: auto;
-	height: auto;
-}
-
-.browsehappy {
-	background-color: #FFF666;
-	
-	color: #222222;
-	line-height: 3em;
-	text-align: center;
-}
-
-.browsehappy a {
-	color: #222222;
-}
-
-/**
- * ********** HTML5BP Clearfix: contain floats **********
- *
- * For modern browsers
- * 1. The space content is one way to avoid an Opera bug when the
- * `contenteditable` attribute is included anywhere else in the document.
- * Otherwise it causes space to appear at the top and bottom of elements
- * that receive the `clearfix` class.
- * 2. The use of `table` rather than `block` is only necessary if using
- * `:before` to contain the top-margins of child elements.
- */
-
-.clearfix:before,
-.clearfix:after {
-	content: " ";   /* 1 */
-	display: table; /* 2 */
-}
-
-.clearfix:after {
-	clear: both;
-}
-
-/**
- * For IE 6/7 only
- * Include this rule to trigger hasLayout and contain floats.
- */
-.clearfix {
-	*zoom: 1;
+	resize: vertical;
 }
 
 /**
@@ -238,4 +207,142 @@ a[rel="next"]:after,
 .breadcrumbs__item--current::after,
 .breadcrumbs__item--current:after {
 	content: '';
+}
+
+/**
+ * ********** Section **********
+ */
+
+
+
+/**
+ * ********** Helpers **********
+ */
+
+.browsehappy {
+	background-color: #FFF666;
+	
+	color: #222222;
+	line-height: 3em;
+	text-align: center;
+}
+
+.browsehappy a {
+	color: #222222;
+}
+
+.screen-reader-text {
+	overflow: hidden;
+	position: absolute;
+
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+
+	border: 0;
+	clip: rect(0 0 0 0);
+}
+
+.screen-reader-text:focus,
+.screen-reader-text:active {
+	display: block;
+	overflow: visible;
+	position: static;
+	z-index: 100000;
+
+	width: auto;
+	height: auto;
+
+	clip: auto;
+}
+
+/**
+ * ********** HTML5BP Clearfix **********
+ */
+
+.clearfix:before,
+.clearfix:after {
+	content: " "; /* 1 */
+	display: table; /* 2 */
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+.clearfix {
+	*zoom: 1;
+}
+
+/**
+ * ********** HTML5BP Print styles **********
+ */
+
+@media print {
+	*,
+	*:before,
+	*:after,
+	*:first-letter,
+	*:first-line {
+		background: transparent !important;
+		color: #000 !important; /* Black prints faster:
+								   http://www.sanbeiji.com/archives/953 */
+		box-shadow: none !important;
+		text-shadow: none !important;
+	}
+
+	a,
+	a:visited {
+		text-decoration: underline;
+	}
+
+	a[href]:after {
+		content: " (" attr(href) ")";
+	}
+
+	abbr[title]:after {
+		content: " (" attr(title) ")";
+	}
+
+	/*
+	 * Don't show links that are fragment identifiers,
+	 * or use the `javascript:` pseudo protocol
+	 */
+
+	a[href^="#"]:after,
+	a[href^="javascript:"]:after {
+		content: "";
+	}
+
+	pre,
+	blockquote {
+		border: 1px solid #999;
+		page-break-inside: avoid;
+	}
+
+	thead {
+		display: table-header-group;
+	}
+
+	tr,
+	img {
+		page-break-inside: avoid;
+	}
+
+	img {
+		max-width: 100% !important;
+	}
+
+	p,
+	h2,
+	h3 {
+		orphans: 3;
+		widows: 3;
+	}
+
+	h2,
+	h3 {
+		page-break-after: avoid;
+	}
 }
