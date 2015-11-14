@@ -34,6 +34,7 @@ if ( ! function_exists( 'blankbase_setup' ) ) :
 		
 		/** Add post formats */
 		add_theme_support( 'post-formats', array(
+			'audio',
 			'aside',
 			'gallery',
 			'image',

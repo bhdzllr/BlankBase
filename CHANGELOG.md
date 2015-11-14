@@ -7,6 +7,8 @@
 * Bring back link rel favicon.
 * Refactor "style.css".
 * Remove keywords meta tag.
+* Add designer meta tag.
+* Add post type audio.
 
 
 ## Version 1.1.0 ##
