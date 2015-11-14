@@ -1,5 +1,11 @@
 # Changelog #
 
+
+## HEAD ##
+
+* Update "header.php"
+
+
 ## Version 1.1.0 ##
 
 * Decision to not modify WordPress HTML markup (pagination, navigation, comments, etc.)

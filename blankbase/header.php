@@ -3,20 +3,27 @@
 <html <?php language_attributes(); ?> class="no-js">
 	<head>
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
 		<title><?php wp_title( '|', true, 'right' ); ?></title>
+
 		<meta name="description" content="<?php bloginfo( 'description' ); ?>" />
+		<meta name="keywords" content="key, words" />
+		<meta name="author" content="Author Name" />
+		<meta name="publisher" content="Publisher" />
 		<meta name="robots" content="index, follow" />
-		<meta name="revisit-after" content="7 days" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/img/icon/icon.ico" type="image/x-icon" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<script type="text/javascript">document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/, 'js');</script>
+		<!--[if lt IE 9]><script type="text/javascript" src="<?php bloginfo( 'template_url' ); ?>/js/createHTML5Elements.js"></script><![endif]-->
+		
 		<link rel="profile" href="http://gmpg.org/xfn/11">
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-		<!--[if lt IE 9]><script type="text/javascript" src="<?php bloginfo( 'template_url' ); ?>/js/createHTML5Elements.js"></script><![endif]-->
 		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?>>
-		<!--[if lte IE 7]>
+		<!--[if lt IE 8]>
 			<p class="browsehappy">
 				Sie verwenden einen <strong>veralteten</strong> Browser. Bitte <a href="http://browsehappy.com/" title="Browser Upgrade">aktualisieren Sie Ihren Browser</a> um ein besseres Surferlebnis zu erhalten.<br />
 				You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.

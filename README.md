@@ -3,19 +3,17 @@
 BlankBase is a blank WordPress theme.
 It can be used to start a new theme or as parent theme for a new child theme.
 
-Version: 1.0.2
-
 
 ## Features ##
 
-* ...
+* tba
 
 
 ## Support ##
 
 ### Client Requirements ###
 
-* ...
+* Nothing special.
 
 ### Server Requirements ###
 
