@@ -6,6 +6,7 @@
 * Update "header.php"
 * Bring back link rel favicon.
 * Refactor "style.css".
+* Remove keywords meta tag.
 
 
 ## Version 1.1.0 ##

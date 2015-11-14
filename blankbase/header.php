@@ -8,7 +8,6 @@
 		<title><?php wp_title( '|', true, 'right' ); ?></title>
 
 		<meta name="description" content="<?php bloginfo( 'description' ); ?>" />
-		<meta name="keywords" content="key, words" />
 		<meta name="author" content="Author Name" />
 		<meta name="publisher" content="Publisher" />
 		<meta name="robots" content="index, follow" />
