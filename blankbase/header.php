@@ -9,8 +9,6 @@
 
 		<meta name="description" content="<?php bloginfo( 'description' ); ?>" />
 		<meta name="author" content="Author Name" />
-		<meta name="designer" content="Designer Name" />
-		<meta name="publisher" content="Publisher" />
 		<meta name="robots" content="index, follow" />
 
 		<meta name="viewport" content="width=device-width, initial-scale=1" />

@@ -1,7 +1,7 @@
 # BlankBase #
 
 BlankBase is a blank WordPress theme.
-It can be used to start a new theme or as parent theme for a new child theme.
+It can be used to start a new theme.
 
 
 ## Features ##

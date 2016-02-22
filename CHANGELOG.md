@@ -6,8 +6,7 @@
 * Update "header.php"
 * Bring back link rel favicon.
 * Refactor "style.css".
-* Remove keywords meta tag.
-* Add designer meta tag.
+* Update meta tags.
 * Add post type audio.
 
 
