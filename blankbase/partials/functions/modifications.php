@@ -1,11 +1,11 @@
 <?php
 
 /**
- * Change excerpt length
+ * Change excerpt length.
  * 
- * @return int Excerpt length by words
+ * @return int Excerpt length by words.
  */
-if (! function_exists( 'blankbase_new_excerpt_length' ) ) :
+if ( ! function_exists( 'blankbase_new_excerpt_length' ) ) :
 
 	function blankbase_new_excerpt_length() {
 		return 55;
@@ -14,9 +14,11 @@ if (! function_exists( 'blankbase_new_excerpt_length' ) ) :
 endif;
 
 /**
- * Modify comment form
+ * Modify comment form.
+ *
+ * @return array Fields.
  */
-if (! function_exists( 'blankbase_comment_form' ) ) :
+if ( ! function_exists( 'blankbase_comment_form' ) ) :
 
 	function blankbase_comment_form( $fields ) {
 		global $allowedtags;
@@ -57,9 +59,9 @@ if (! function_exists( 'blankbase_comment_form' ) ) :
 endif;
 
 /**
- * Add custom style to login form
+ * Add custom style to login form.
  */
-if (! function_exists( 'blankbase_custom_login' ) ) :
+if ( ! function_exists( 'blankbase_custom_login' ) ) :
 
 	function blankbase_custom_login() {
 		wp_enqueue_style( 'custom-login', get_template_directory_uri() . '/css/style-login.css' );
@@ -68,11 +70,11 @@ if (! function_exists( 'blankbase_custom_login' ) ) :
 endif;
 
 /**
- * Add custom URL to login logo
+ * Add custom URL to login logo.
  *
- * @return string Home URL
+ * @return string Home URL.
  */
-if (! function_exists( 'blankbase_custom_login_logo_url' ) ) :
+if ( ! function_exists( 'blankbase_custom_login_logo_url' ) ) :
 
 	function blankbase_custom_login_logo_url() {
 		return home_url();
@@ -81,11 +83,11 @@ if (! function_exists( 'blankbase_custom_login_logo_url' ) ) :
 endif;
 
 /**
- * Add custom title to login logo
+ * Add custom title to login logo.
  *
- * @return string Title for logo URL
+ * @return string Title for logo URL.
  */
-if (! function_exists( 'blankbase_custom_login_logo_url_title' ) ) :
+if ( ! function_exists( 'blankbase_custom_login_logo_url_title' ) ) :
 
 	function blankbase_custom_login_logo_url_title() {
 		return get_bloginfo( 'name' ) . ' - ' . get_bloginfo( 'description' );
@@ -94,9 +96,9 @@ if (! function_exists( 'blankbase_custom_login_logo_url_title' ) ) :
 endif;
 
 /**
- * Add custom dashboard logo
+ * Add custom dashboard logo.
  */
-if (! function_exists( 'blankbase_custom_dashboard_logo' ) ) :
+if ( ! function_exists( 'blankbase_custom_dashboard_logo' ) ) :
 
 	function blankbase_custom_dashboard_logo() {
 		echo '
@@ -112,9 +114,9 @@ endif;
 
 /**
  * Remove admin color scheme picker for user with less permissions
- * and add new color schemes
+ * and add new color schemes.
  */
-if (! function_exists( 'blankbase_admin_color_scheme' ) ) :
+if ( ! function_exists( 'blankbase_admin_color_scheme' ) ) :
 
 	function blankbase_admin_color_scheme() {
 		if ( ! current_user_can( 'update_core' ) )
@@ -131,9 +133,9 @@ if (! function_exists( 'blankbase_admin_color_scheme' ) ) :
 endif;
 
 /**
- * Hide updates from users with less permissions
+ * Hide updates from users with less permissions.
  */
-if (! function_exists( 'blankbase_hide_update_notice' ) ) :
+if ( ! function_exists( 'blankbase_hide_update_notice' ) ) :
 
 	function blankbase_hide_update_notice() {
 		if ( ! current_user_can( 'update_core' ) )
@@ -144,9 +146,9 @@ endif;
 
 /**
  * Remove some menus from users which are not administrators
- * for WP >= 3.1
+ * for WP >= 3.1.
  */
-if (! function_exists( 'blankbase_remove_menus' ) ) :
+if ( ! function_exists( 'blankbase_remove_menus' ) ) :
 
 	function blankbase_remove_menus() {
 		global $menu;
@@ -154,7 +156,7 @@ if (! function_exists( 'blankbase_remove_menus' ) ) :
 		// get_currentuserinfo();
 
 		// if ( $current_user->user_login == 'username' ) {
-		if ( !current_user_can( 'administrator' ) ) {
+		if ( ! current_user_can( 'administrator' ) ) {
 			remove_menu_page( 'link-manager.php' );
 			remove_menu_page( 'edit-comments.php' );
 			remove_menu_page( 'plugins.php' );
@@ -169,9 +171,9 @@ if (! function_exists( 'blankbase_remove_menus' ) ) :
 endif;
 
 /**
- * Remove Version from source
+ * Remove Version from source.
  */
-if (! function_exists( 'blankbase_remove_version' ) ) :
+if ( ! function_exists( 'blankbase_remove_version' ) ) :
 
 	function blankbase_remove_version() {
 		return;
@@ -180,22 +182,36 @@ if (! function_exists( 'blankbase_remove_version' ) ) :
 endif;
 
 /**
- * Fix validation error with "rel" attribute
+ * Fix validation error with "rel" attribute.
  *
- * @return string Empty string
+ * @return string Empty string.
  */
-if (! function_exists( 'blankbase_remove_category_list_rel' ) ) :
+if ( ! function_exists( 'blankbase_remove_category_list_rel' ) ) :
 
-function blankbase_remove_category_list_rel( $output ) {
-	return str_replace( ' rel="category tag"', '', $output );
-}
+	function blankbase_remove_category_list_rel( $output ) {
+		return str_replace( ' rel="category tag"', '', $output );
+	}
+
+endif;
+
+/** 
+ * Remove anchor on more-link.
+ *
+ * @see http://stackoverflow.com/a/27775743
+ */
+if ( ! function_exists( 'blankbase_remove_more_link_scroll' ) ) :
+
+	function blankbase_remove_more_link_scroll( $link ) {
+		$link = preg_replace( '|#more-[0-9]+|', '', $link );
+		return $link;
+	}
 
 endif;
 
 /**
- * Initialize all functions
+ * Initialize all functions.
  */
-add_filter( 'excerpt_length',              'blankbase_new_excerpt_length');
+// add_filter( 'excerpt_length',              'blankbase_new_excerpt_length');
 // add_filter( 'comment_form_default_fields', 'blankbase_comment_form' );
 add_action( 'login_enqueue_scripts',       'blankbase_custom_login' );
 add_filter( 'login_headerurl',             'blankbase_custom_login_logo_url' );
@@ -207,3 +223,4 @@ add_action( 'admin_menu',                  'blankbase_remove_menus' );
 add_filter( 'the_generator',               'blankbase_remove_version' );
 add_filter( 'wp_list_categories',          'blankbase_remove_category_list_rel' );
 add_filter( 'the_category',                'blankbase_remove_category_list_rel' );
+// add_filter( 'the_content_more_link',       'remove_more_link_scroll' );

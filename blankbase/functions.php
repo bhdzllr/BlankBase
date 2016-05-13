@@ -1,18 +1,18 @@
 <?php
 
 /**
- * Blank Base Setup
+ * BlankBase Setup
  */
 if ( ! function_exists( 'blankbase_setup' ) ) :
 
 	function blankbase_setup() {
-		/** WordPress manages `<title>` */
+		/** WordPress manages `<title>`. */
 		add_theme_support( 'title-tag' );
 		
 		/** Add RSS feed links to `<head>` for posts and comments. */
 		add_theme_support( 'automatic-feed-links' );
 
-		/** Add custom header */
+		/** Add custom header. */
 		add_theme_support( 'custom-header', array(
 			'default-text-color' => '#222222',
 			'width'              => 980,
@@ -20,19 +20,19 @@ if ( ! function_exists( 'blankbase_setup' ) ) :
 			'flex-height'        => true,
 			'flex-width'         => true,
 
-			// Callback for styling the header
+			// Callback for styling the header.
 			'wp-head-callback'   => 'blankbase_header_style',
 		) );
 		
-		/** Add support for featured content */
+		/** Add support for featured content. */
 		add_theme_support( 'featured-content', array(
 			'max_posts' => 3,
 		) );
 
-		/** Add post thumbnails */
+		/** Add post thumbnails. */
 		add_theme_support( 'post-thumbnails' );
 		
-		/** Add post formats */
+		/** Add post formats. */
 		add_theme_support( 'post-formats', array(
 			'audio',
 			'aside',
@@ -44,18 +44,17 @@ if ( ! function_exists( 'blankbase_setup' ) ) :
 		) );
 		
 		/**
-		 * Register menus
-		 * to allow changes in backend
+		 * Register menus to allow changes in backend.
 		*/
 		register_nav_menus( array(
 			'primary'   => __( 'Primary Menu', 'blankbase' ),
 			'secondary' => __( 'Secondary Menu', 'blankbase' ), 
 		) );
 
-		/** Language support */
+		/** Language support. */
 		load_theme_textdomain( 'blankbase', get_template_directory() . '/languages' );
 
-		/** Load editor style */
+		/** Load editor style. */
 		add_editor_style( 'css/editor-style.css' );
 		
 		/**
@@ -70,10 +69,10 @@ if ( ! function_exists( 'blankbase_setup' ) ) :
 			'caption',
 		) );
 		
-		/** Use own style on galleries */
+		/** Use own style on galleries. */
 		add_filter( 'use_default_gallery_style', '__return_false' );
 
-		/** Remove `h1` from editor */
+		/** Remove `h1` from editor. */
 		add_filter( 'tiny_mce_before_init', function( $init ) {
 			$init['block_formats'] = 'Paragraph=p;Heading 2=h2;Heading 3=h3;Heading 4=h4;Heading 5=h5;Heading 6=h6;Address=address;Pre=pre';	
 
@@ -84,9 +83,9 @@ if ( ! function_exists( 'blankbase_setup' ) ) :
 endif;
 
 /**
- * Add new customizers to theme customizer
+ * Add new customizers to theme customizer.
  *
- * @link http://kwight.ca/2012/12/02/adding-a-logo-uploader-to-your-wordpress-site-with-the-theme-customizer/
+ * @see http://kwight.ca/2012/12/02/adding-a-logo-uploader-to-your-wordpress-site-with-the-theme-customizer/
  */
 if ( ! function_exists( 'blankbase_theme_customizer' ) ) :
 
@@ -109,7 +108,7 @@ if ( ! function_exists( 'blankbase_theme_customizer' ) ) :
 endif;
 
 /**
- * Add header style for title and tagline
+ * Add header style for title and tagline.
  */
 if ( ! function_exists( 'blankbase_header_style' ) ) :
 
@@ -132,7 +131,7 @@ if ( ! function_exists( 'blankbase_header_style' ) ) :
 endif;
 
 /**
- * Sidebars and widgets
+ * Sidebars and widgets.
  */
 if ( ! function_exists( 'blankbase_widgets_init' ) ) :
 
@@ -171,58 +170,55 @@ if ( ! function_exists( 'blankbase_widgets_init' ) ) :
 endif;
 
 /**
- * Add styles and scripts to "wp_head()"
+ * Add styles and scripts to "wp_head()".
  */
 if ( ! function_exists( 'blankbase_stylesnscripts' ) ) :
 
 	function blankbase_stylesnscripts() {
-		/** Load HTML5-Tag generator for IE */
-		// Hardcoded in "header.php", because it must be loaded before all stylesheets
+		/** Load HTML5-Tag generator for IE .*/
+		// Hardcoded in "header.php", because it must be loaded before all stylesheets.
 		// wp_enqueue_script( 'createHTML5Elements', get_template_directory_uri() . '/js/createHTML5Elements.js' );
 		// wp_script_add_data( 'createHTML5Elements', 'conditional', 'lte IE 9' );
 
-		/** Load main stylesheet */
+		/** Load main stylesheet. */
 		wp_enqueue_style( 'style', get_stylesheet_uri() );
 		
-		/** Load IE specific stylesheet */
+		/** Load IE specific stylesheet. */
 		wp_enqueue_style( 'lte8-fix', get_template_directory_uri() . '/css/lte8-fix.css', array( 'style' ) );
 		wp_style_add_data( 'lte8-fix', 'conditional', 'lte IE 8' );
 		
-		/** Load IE specific stylesheet */
+		/** Load IE specific stylesheet. */
 		wp_enqueue_style( 'lte7-fix', get_template_directory_uri() . '/css/lte7-fix.css', array( 'style' ) );
 		wp_style_add_data( 'lte7-fix', 'conditional', 'lte IE 7' );
-		
-		/** Prevent FOUC for `no-js` */
-		wp_enqueue_script( 'fouc', get_template_directory_uri() . '/js/fouc.js');
 
-		/** Add jquery to footer */
-		wp_enqueue_script( 'jquery-blankbase', get_template_directory_uri() . '/js/vendor/jquery.min.js', array(), false, true );
+		/** Remove WP jQuery. */
+		// wp_deregister_script( 'jquery' );
 
-		/** Add plugins.js to footer */
+		/** Add plugins.js to footer. */
 		wp_enqueue_script( 'plugins-js', get_template_directory_uri() . '/js/vendor/plugins.js', array( 'jquery-blankbase' ), false, true );
 		
-		/** Add main.js to footer */
+		/** Add main.js to footer. */
 		wp_enqueue_script( 'main-js', get_template_directory_uri() . '/js/main.js', array( 'plugins-js' ), false, true );
 	}
 
 endif;
 
 /**
- * Include helpers and custom functions
- * Can be outsourced into plug-ins later
+ * Include helpers and custom functions.
+ * Can be outsourced into plug-ins later.
  */
 if ( ! function_exists( 'blankbase_includes' ) ) :
 
 	function blankbase_includes() {
-		require_once 'partials/functions/template-tags.php';
-		require_once 'partials/functions/modifications.php';
-		require_once 'partials/functions/helpers.php';
+		include_once 'partials/functions/template-tags.php';
+		include_once 'partials/functions/modifications.php';
+		include_once 'partials/functions/helpers.php';
 	}
 
 endif;
 
 /**
- * Initialize all functions
+ * Initialize all functions.
  */
 add_action( 'after_setup_theme',  'blankbase_setup',            1 );
 add_action( 'customize_register', 'blankbase_theme_customizer'    );

@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Get the breadcrumbs
+ * Get the breadcrumbs.
  *
- * @return string Breadcrumbs
+ * @return string Breadcrumbs as HTML list.
  */
 function blankbase_the_breadcrumbs() {
 	global $post;
@@ -31,11 +31,11 @@ function blankbase_the_breadcrumbs() {
 }
 
 /**
- * Display all children from the top parent
+ * Display all children from the top parent.
  *
- * @param array  $post  Array from a page
- * @param string $start HTML Start-tag (optional)
- * @param string $end   HTML End-tag (optional)
+ * @param array  $post  Array from a page.
+ * @param string $start HTML Start-tag (optional).
+ * @param string $end   HTML End-tag (optional).
  */
 function blankbase_the_parent_children( $post, $start = null, $end = null ) {	
 	if( $post->post_parent ) {
@@ -58,11 +58,11 @@ function blankbase_the_parent_children( $post, $start = null, $end = null ) {
 }
 
 /**
- * Modify comment markup
+ * Modify comment markup.
  *
- * @param object  $comment POPO with comment data
- * @param array   $args    Array with arguments
- * @param integer $depth   Depth of comment replies
+ * @param object  $comment POPO with comment data.
+ * @param array   $args    Array with arguments.
+ * @param integer $depth   Depth of comment replies.
  */
 function blankbase_comment_markup( $comment, $args, $depth ) {
 	$tag = ( 'div' === $args['style'] ) ? 'div' : 'li';

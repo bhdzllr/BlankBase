@@ -42,23 +42,9 @@ function blankbase_dequeue_stylesnscripts() {
 	wp_dequeue_style( 'lte8-fix' );
 	wp_dequeue_style( 'lte7-fix' );
 
-	/** Remove unneeded scripts in header */
-	wp_dequeue_script( 'fouc' );
-
 	/** Remove unneeded scripts in footer */
 	wp_dequeue_script( 'main-js' );
 	wp_dequeue_script( 'plugins-js' );
-	wp_dequeue_script( 'jquery-blankbase' );
-}
-
-/** 
- * Remove anchor on more-link
- *
- * @link http://stackoverflow.com/questions/27775617/change-read-more-link-in-wordpress-4-1-to-prevent-scroll-remove-more-x-hash
- */
-function blankbase_remove_more_link_scroll( $link ) {
-	$link = preg_replace( '|#more-[0-9]+|', '', $link );
-	return $link;
 }
 
 /**

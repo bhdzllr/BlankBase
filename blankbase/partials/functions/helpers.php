@@ -1,10 +1,11 @@
 <?php
 
 /**
- * Get page id by title
+ * Get page ID by title.
  * 
- * @param  string $title Page title
- * @return int           Page id
+ * @param  string $title Page title.
+ *
+ * @return int Page ID.
  */
 function blankbase_get_page_id_by_title( $title ) {
 	$page = get_page_by_title( $title );
@@ -13,10 +14,11 @@ function blankbase_get_page_id_by_title( $title ) {
 }
 
 /**
- * Get metadata from attachment by id
+ * Get metadata from attachment by ID.
  *
- * @param  int   $attachmentId Id of attachment
- * @return array Information about the attachment
+ * @param int $attachmentId ID of attachment.
+ *
+ * @return array Information about the attachment.
  */
 function blankbase_get_attachment_meta( $attachmentId ) {
 	$attachment = get_post( $attachmentId );

@@ -4,7 +4,7 @@
  * Author:       bhdzllr
  * Author URI:   http://bhdzllr.com/
  * Description:  An empty theme with some basic settings to start a new WordPress theme.
- * Version:      0.0.1
+ * Version:      1.1.1
  * License:      GNU General Public License v2 or later
  * License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  * Tags:         blankbase, blank, theme, base, empty, starter, master, skeleton
@@ -16,20 +16,6 @@
  */
 
 
-
- /**
- * *********** Base **********
- */
-
-html, body {
-	margin: 0;
-	padding: 0;
-
-	color: #222222;
-	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	font-size: 1em;
-	line-height: 1.45em;
-}
 
 /**
  * ********** Minimal Normalize ********** 
@@ -59,15 +45,6 @@ template {
 	display: none;
 }
 
-audio,
-canvas,
-progress,
-video {
-	display: inline-block;
-	*display: inline; /** IE hasLayout */
-	*zoom: 1;         /** IE hasLayout */
-}
-
 html,
 button,
 input,
@@ -84,20 +61,20 @@ textarea {
 	line-height: inherit;
 }
 
-input, 
-textarea {
-	outline: 0;
+audio,
+canvas,
+progress,
+video {
+	display: inline-block;
+	*display: inline; /** IE hasLayout */
+	*zoom: 1;         /** IE hasLayout */
 }
 
 embed,
 iframe,
 object,
 video {
-	max-width: 100%; /* Make sure videos and embeds fit their containers. */
-}
-
-a img {
-	border: none;
+	max-width: 100%;
 }
 
 audio:not([controls]) {
@@ -105,13 +82,19 @@ audio:not([controls]) {
 	height: 0;
 }
 
-abbr {
-	cursor: help;
-}
-
 /**
  * *********** Base **********
  */
+
+html, body {
+	margin: 0;
+	padding: 0;
+
+	color: #222222;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 1em;
+	line-height: 1.45em;
+}
 
 a,
 a:link,
@@ -124,7 +107,7 @@ a:active {
 }
 
 p {
-	margin: 1em;
+	margin: 1em 0;
 }
 
 img {
@@ -143,6 +126,10 @@ textarea {
 	max-height: 320px;
 
 	resize: vertical;
+}
+
+abbr {
+	cursor: help;
 }
 
 /**
@@ -205,6 +192,46 @@ a[rel="next"]:after,
 .breadcrumbs__item--current::after,
 .breadcrumbs__item--current:after {
 	content: '';
+}
+
+/**
+ * ********** Media Object **********
+ */
+
+.media {
+}
+
+.media,
+.media__body {
+	overflow: hidden;
+	zoom: 1;
+}
+
+.media__meta {
+	float: left;
+
+	margin-right: 2%;
+}
+
+.media__meta img {
+	vertical-align: top;
+
+	background-color: #333333;
+}
+
+.media h3 {
+	margin-top: 0;
+}
+
+.media__body p:last-child {
+	margin-bottom: 0;
+}
+
+.media--flipped .media__meta {
+	float: right;
+
+	margin-right: 0px;
+	margin-left: 2%;
 }
 
 /**
