@@ -30,11 +30,7 @@
 		<![endif]-->
 
 		<header>
-			<?php if ( get_theme_mod( 'blankbase_logo' ) ) : ?>
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?> - <?php esc_attr_e( 'Home', 'blankbase' ); ?>" rel="home">
-				<img src="<?php echo esc_url( get_theme_mod( 'blankbase_logo' ) ) ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?> - <?php esc_attr_e( 'Home', 'blankbase' ); ?>" />
-			</a>
-			<?php endif; ?>
+			<?php the_custom_logo(); ?>
 		
 			<?php if ( display_header_text() ) : ?>
 			<h1 class="site-title">
