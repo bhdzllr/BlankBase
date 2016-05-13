@@ -1,5 +1,9 @@
 # Changelog #
 
+## HEAD ##
+
+* Add theme support for custom logo, remove old function.
+
 
 ## Version 1.1.1 ##
 

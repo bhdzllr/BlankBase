@@ -23,6 +23,9 @@ if ( ! function_exists( 'blankbase_setup' ) ) :
 			// Callback for styling the header.
 			'wp-head-callback'   => 'blankbase_header_style',
 		) );
+
+		/** Add support for custom logo. */
+		add_theme_support( 'custom-logo' );
 		
 		/** Add support for featured content. */
 		add_theme_support( 'featured-content', array(
@@ -78,31 +81,6 @@ if ( ! function_exists( 'blankbase_setup' ) ) :
 
 			return $init;
 		});
-	}
-
-endif;
-
-/**
- * Add new customizers to theme customizer.
- *
- * @see http://kwight.ca/2012/12/02/adding-a-logo-uploader-to-your-wordpress-site-with-the-theme-customizer/
- */
-if ( ! function_exists( 'blankbase_theme_customizer' ) ) :
-
-	function blankbase_theme_customizer( $wp_customize ) {
-		$wp_customize->add_section( 'blankbase_logo_section' , array(
-			'title'       => __( 'Logo', 'blankbase' ),
-			'priority'    => 30,
-			'description' => 'Logo upload, does not replace site title and tagline',
-		) );
-
-		$wp_customize->add_setting( 'blankbase_logo' );
-
-		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'blankbase_logo', array(
-			'label'    => __( 'Logo', 'themeslug' ),
-			'section'  => 'blankbase_logo_section',
-			'settings' => 'blankbase_logo',
-		) ) );
 	}
 
 endif;

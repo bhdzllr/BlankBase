@@ -17,8 +17,10 @@ It can be used to start a new theme.
 
 ### Server Requirements ###
 
-* WordPress 4.1
-* PHP 5.3
+* WordPress 4.5 "Coleman".
+	* PHP 5.6 or greater.
+	* MySQL 5.6 or greater or MariaDB version 10.0 or greater.
+	* The mod_rewrite Apache module.
 
 
 ## Roadmap ##
