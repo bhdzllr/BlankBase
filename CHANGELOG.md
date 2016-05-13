@@ -7,6 +7,7 @@
 
 ## Version 1.1.1 ##
 
+* Fix edit link condition in page content template.
 * Move more link modification.
 * Remove FOUC file.
 * Add "editor-style.css" for parent theme.

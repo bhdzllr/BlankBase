@@ -9,7 +9,7 @@
 		<?php the_content(); ?>
 	</div>
 	
-	<?php if ( wp_link_pages() || edit_post_link() ) : ?>
+	<?php if ( wp_link_pages( [ 'echo' => 0] ) || current_user_can( 'edit_posts' ) ) : ?>
 	<footer>
 		<?php
 		
