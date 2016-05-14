@@ -2,12 +2,13 @@
 
 ## HEAD ##
 
+* Remove HTML title tag.
+* Fix edit link condition in page content template.
 * Add theme support for custom logo, remove old function.
 
 
 ## Version 1.1.1 ##
 
-* Fix edit link condition in page content template.
 * Move more link modification.
 * Remove FOUC file.
 * Add "editor-style.css" for parent theme.
