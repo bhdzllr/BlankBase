@@ -6,6 +6,7 @@
 * Fix edit link condition in page content template.
 * Add theme support for custom logo, remove old function.
 * Fix wrong loop for creating HTML5 elements.
+* Fix PHP start tag in sidebar footer.
 
 
 ## Version 1.1.1 ##

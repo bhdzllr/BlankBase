@@ -2,7 +2,7 @@
 	
 	<?php dynamic_sidebar( 'aside-footer' ); ?>
 		
-<? else : ?>
+<?php else : ?>
 
 	<p>&copy; 2014<?php if ( date( 'Y' ) > '2014' ) echo ' - ' . date( 'Y' ); ?> bhdzllr</p>
 	
